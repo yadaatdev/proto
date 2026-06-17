@@ -1,0 +1,13 @@
+syntax = "proto3";
+package api.admin.v1;
+
+import "domain/school/v1/school.proto";
+
+message CreateSchoolRequest {
+  string name = 1;
+  string city_id = 2;
+}
+
+message CreateSchoolResponse {
+  domain.school.v1.School school = 1;
+}
