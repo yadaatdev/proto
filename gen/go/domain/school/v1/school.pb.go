@@ -89,8 +89,8 @@ const file_domain_school_v1_school_proto_rawDesc = "" +
 	"\x06School\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x12\n" +
-	"\x04city\x18\x03 \x01(\tR\x04cityB\xc5\x01\n" +
-	"\x14com.domain.school.v1B\vSchoolProtoP\x01Z>github.com/bufbuild/buf-examples/gen/domain/school/v1;schoolv1\xa2\x02\x03DSX\xaa\x02\x10Domain.School.V1\xca\x02\x10Domain\\School\\V1\xe2\x02\x1cDomain\\School\\V1\\GPBMetadata\xea\x02\x12Domain::School::V1b\x06proto3"
+	"\x04city\x18\x03 \x01(\tR\x04cityB\xc2\x01\n" +
+	"\x14com.domain.school.v1B\vSchoolProtoP\x01Z;github.com/yadaatdev/proto/gen/go/domain/school/v1;schoolv1\xa2\x02\x03DSX\xaa\x02\x10Domain.School.V1\xca\x02\x10Domain\\School\\V1\xe2\x02\x1cDomain\\School\\V1\\GPBMetadata\xea\x02\x12Domain::School::V1b\x06proto3"
 
 var (
 	file_domain_school_v1_school_proto_rawDescOnce sync.Once

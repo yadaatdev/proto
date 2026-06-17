@@ -7,7 +7,7 @@
 package adminv1
 
 import (
-	v1 "github.com/bufbuild/buf-examples/gen/domain/school/v1"
+	v1 "github.com/yadaatdev/proto/gen/go/domain/school/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -127,8 +127,8 @@ const file_api_admin_v1_messages_proto_rawDesc = "" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x17\n" +
 	"\acity_id\x18\x02 \x01(\tR\x06cityId\"H\n" +
 	"\x14CreateSchoolResponse\x120\n" +
-	"\x06school\x18\x01 \x01(\v2\x18.domain.school.v1.SchoolR\x06schoolB\xae\x01\n" +
-	"\x10com.api.admin.v1B\rMessagesProtoP\x01Z9github.com/bufbuild/buf-examples/gen/api/admin/v1;adminv1\xa2\x02\x03AAX\xaa\x02\fApi.Admin.V1\xca\x02\fApi\\Admin\\V1\xe2\x02\x18Api\\Admin\\V1\\GPBMetadata\xea\x02\x0eApi::Admin::V1b\x06proto3"
+	"\x06school\x18\x01 \x01(\v2\x18.domain.school.v1.SchoolR\x06schoolB\xab\x01\n" +
+	"\x10com.api.admin.v1B\rMessagesProtoP\x01Z6github.com/yadaatdev/proto/gen/go/api/admin/v1;adminv1\xa2\x02\x03AAX\xaa\x02\fApi.Admin.V1\xca\x02\fApi\\Admin\\V1\xe2\x02\x18Api\\Admin\\V1\\GPBMetadata\xea\x02\x0eApi::Admin::V1b\x06proto3"
 
 var (
 	file_api_admin_v1_messages_proto_rawDescOnce sync.Once

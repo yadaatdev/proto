@@ -26,9 +26,9 @@ const file_api_admin_v1_admin_proto_rawDesc = "" +
 	"\n" +
 	"\x18api/admin/v1/admin.proto\x12\fapi.admin.v1\x1a\x1bapi/admin/v1/messages.proto2e\n" +
 	"\fAdminService\x12U\n" +
-	"\fCreateSchool\x12!.api.admin.v1.CreateSchoolRequest\x1a\".api.admin.v1.CreateSchoolResponseB\xab\x01\n" +
+	"\fCreateSchool\x12!.api.admin.v1.CreateSchoolRequest\x1a\".api.admin.v1.CreateSchoolResponseB\xa8\x01\n" +
 	"\x10com.api.admin.v1B\n" +
-	"AdminProtoP\x01Z9github.com/bufbuild/buf-examples/gen/api/admin/v1;adminv1\xa2\x02\x03AAX\xaa\x02\fApi.Admin.V1\xca\x02\fApi\\Admin\\V1\xe2\x02\x18Api\\Admin\\V1\\GPBMetadata\xea\x02\x0eApi::Admin::V1b\x06proto3"
+	"AdminProtoP\x01Z6github.com/yadaatdev/proto/gen/go/api/admin/v1;adminv1\xa2\x02\x03AAX\xaa\x02\fApi.Admin.V1\xca\x02\fApi\\Admin\\V1\xe2\x02\x18Api\\Admin\\V1\\GPBMetadata\xea\x02\x0eApi::Admin::V1b\x06proto3"
 
 var file_api_admin_v1_admin_proto_goTypes = []any{
 	(*CreateSchoolRequest)(nil),  // 0: api.admin.v1.CreateSchoolRequest

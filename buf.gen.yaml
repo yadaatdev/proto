@@ -3,7 +3,7 @@ managed:
   enabled: true
   override:
     - file_option: go_package_prefix
-      value: github.com/bufbuild/buf-examples/gen
+      value: github.com/yadaatdev/proto/gen/go
 plugins:
   - remote: buf.build/protocolbuffers/go
     out: gen/go
