@@ -1,8 +1,0 @@
-syntax = "proto3";
-package api.admin.v1;
-
-import "api/admin/v1/messages.proto";
-
-service AdminService {
-  rpc CreateSchool (CreateSchoolRequest) returns (CreateSchoolResponse);
-}
