@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package api.v1;
+
+service UserService {
+  rpc GetMe(GetMeRequest) returns (GetMeResponse);
+}
+
+message GetMeRequest {}
+
+message GetMeResponse {
+  string email = 1;
+  string display_name = 2;
+}

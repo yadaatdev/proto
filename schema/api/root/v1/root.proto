@@ -1,8 +1,0 @@
-syntax = "proto3";
-package api.root.v1;
-
-import "api/root/v1/messages.proto";
-
-service RootService {
-  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
-}

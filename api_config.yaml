@@ -1,0 +1,31 @@
+type: google.api.Service
+config_version: 3
+
+# 1. Name MUST match this exact format. Replace YOUR_PROJECT_ID.
+name: "*.apigateway.YOUR_PROJECT_ID.cloud.goog"
+title: "Yadaat Backend Gateway API"
+
+# 2. Match your exact .proto package service paths
+apis:
+  - name: "api.root.v1.RootService"
+  - name: "api.admin.v1.AdminService"
+
+# 3. Connect Firebase Auth at the front door
+authentication:
+  providers:
+    - id: firebase_auth
+      issuer: "https://securetoken.google.com/YOUR_PROJECT_ID"
+      jwks_uri: "https://www.googleapis.com/service_accounts/v1/metadata/x509/securetoken@system.gserviceaccount.com"
+      audiences: "YOUR_PROJECT_ID"
+  rules:
+    # Protect every single endpoint (*) with Firebase
+    - selector: "*"
+      requirements:
+        - provider_id: firebase_auth
+
+# 4. Route the traffic to your Cloud Run service
+backend:
+  rules:
+    - selector: "*"
+      # Replace with your Cloud Run service URL. Must start with grpcs://
+      address: "grpcs://your-backend-service-hash-uc.a.run.app"
