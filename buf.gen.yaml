@@ -13,5 +13,8 @@ plugins:
     opt:
       - paths=source_relative
       - simple
+  - remote: buf.build/bufbuild/es
+    out: gen/ts
+    opt: target=ts
 inputs:
   - directory: schema
