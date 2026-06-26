@@ -1,0 +1,14 @@
+{
+  "name": "proto",
+  "version": "0.1.1",
+  "exports": { "./*": "./gen/ts/*.ts" },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.7.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": { "@bufbuild/protobuf": "^2" }
+}
