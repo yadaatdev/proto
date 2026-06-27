@@ -1,4 +1,4 @@
-module github.com/yadaatdev/proto/gen/go
+module github.com/yadaatdev/proto
 
 go 1.26.4
 
