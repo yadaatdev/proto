@@ -5,6 +5,12 @@ modules:
 lint:
   use:
     - STANDARD
+  # We name RPC types <Rpc><Entity>{Request,Response} (e.g. GetCityRequest) so
+  # messages stay unique across the shared api.v1 package; this differs from the
+  # buf-standard <Rpc>{Request,Response} naming.
+  except:
+    - RPC_REQUEST_STANDARD_NAME
+    - RPC_RESPONSE_STANDARD_NAME
 breaking:
   use:
     - FILE

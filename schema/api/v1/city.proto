@@ -9,47 +9,47 @@ message City {
   string name = 2;
 }
 
-message GetRequest {
+message GetCityRequest {
   string id = 1;
 }
 
-message GetResponse {
+message GetCityResponse {
   City city = 1;
 }
 
-message CreateRequest {
+message CreateCityRequest {
   string name = 1;
 }
 
-message CreateResponse {
+message CreateCityResponse {
   City city = 1;
 }
 
-message UpdateRequest {
+message UpdateCityRequest {
   string id = 1;
   string name = 2;
 }
 
-message UpdateResponse {
+message UpdateCityResponse {
   City city = 1;
 }
 
-message DeleteRequest {
+message DeleteCityRequest {
   string id = 1;
 }
 
-message DeleteResponse {}
+message DeleteCityResponse {}
 
-message ListRequest {}
+message ListCityRequest {}
 
-message ListResponse {
-  repeated Option cities = 1;
+message ListCityResponse {
+  repeated Option options = 1;
 }
 
 service CityService {
-  rpc Get(GetRequest) returns (GetResponse);
-  rpc Create(CreateRequest) returns (CreateResponse);
-  rpc Update(UpdateRequest) returns (UpdateResponse);
-  rpc Delete(DeleteRequest) returns (DeleteResponse);
-  rpc List(ListRequest) returns (ListResponse);
+  rpc Get(GetCityRequest) returns (GetCityResponse);
+  rpc Create(CreateCityRequest) returns (CreateCityResponse);
+  rpc Update(UpdateCityRequest) returns (UpdateCityResponse);
+  rpc Delete(DeleteCityRequest) returns (DeleteCityResponse);
+  rpc List(ListCityRequest) returns (ListCityResponse);
 }

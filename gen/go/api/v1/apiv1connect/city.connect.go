@@ -47,11 +47,11 @@ const (
 
 // CityServiceClient is a client for the api.v1.CityService service.
 type CityServiceClient interface {
-	Get(context.Context, *v1.GetRequest) (*v1.GetResponse, error)
-	Create(context.Context, *v1.CreateRequest) (*v1.CreateResponse, error)
-	Update(context.Context, *v1.UpdateRequest) (*v1.UpdateResponse, error)
-	Delete(context.Context, *v1.DeleteRequest) (*v1.DeleteResponse, error)
-	List(context.Context, *v1.ListRequest) (*v1.ListResponse, error)
+	Get(context.Context, *v1.GetCityRequest) (*v1.GetCityResponse, error)
+	Create(context.Context, *v1.CreateCityRequest) (*v1.CreateCityResponse, error)
+	Update(context.Context, *v1.UpdateCityRequest) (*v1.UpdateCityResponse, error)
+	Delete(context.Context, *v1.DeleteCityRequest) (*v1.DeleteCityResponse, error)
+	List(context.Context, *v1.ListCityRequest) (*v1.ListCityResponse, error)
 }
 
 // NewCityServiceClient constructs a client for the api.v1.CityService service. By default, it uses
@@ -65,31 +65,31 @@ func NewCityServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 	baseURL = strings.TrimRight(baseURL, "/")
 	cityServiceMethods := v1.File_api_v1_city_proto.Services().ByName("CityService").Methods()
 	return &cityServiceClient{
-		get: connect.NewClient[v1.GetRequest, v1.GetResponse](
+		get: connect.NewClient[v1.GetCityRequest, v1.GetCityResponse](
 			httpClient,
 			baseURL+CityServiceGetProcedure,
 			connect.WithSchema(cityServiceMethods.ByName("Get")),
 			connect.WithClientOptions(opts...),
 		),
-		create: connect.NewClient[v1.CreateRequest, v1.CreateResponse](
+		create: connect.NewClient[v1.CreateCityRequest, v1.CreateCityResponse](
 			httpClient,
 			baseURL+CityServiceCreateProcedure,
 			connect.WithSchema(cityServiceMethods.ByName("Create")),
 			connect.WithClientOptions(opts...),
 		),
-		update: connect.NewClient[v1.UpdateRequest, v1.UpdateResponse](
+		update: connect.NewClient[v1.UpdateCityRequest, v1.UpdateCityResponse](
 			httpClient,
 			baseURL+CityServiceUpdateProcedure,
 			connect.WithSchema(cityServiceMethods.ByName("Update")),
 			connect.WithClientOptions(opts...),
 		),
-		delete: connect.NewClient[v1.DeleteRequest, v1.DeleteResponse](
+		delete: connect.NewClient[v1.DeleteCityRequest, v1.DeleteCityResponse](
 			httpClient,
 			baseURL+CityServiceDeleteProcedure,
 			connect.WithSchema(cityServiceMethods.ByName("Delete")),
 			connect.WithClientOptions(opts...),
 		),
-		list: connect.NewClient[v1.ListRequest, v1.ListResponse](
+		list: connect.NewClient[v1.ListCityRequest, v1.ListCityResponse](
 			httpClient,
 			baseURL+CityServiceListProcedure,
 			connect.WithSchema(cityServiceMethods.ByName("List")),
@@ -100,15 +100,15 @@ func NewCityServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 
 // cityServiceClient implements CityServiceClient.
 type cityServiceClient struct {
-	get    *connect.Client[v1.GetRequest, v1.GetResponse]
-	create *connect.Client[v1.CreateRequest, v1.CreateResponse]
-	update *connect.Client[v1.UpdateRequest, v1.UpdateResponse]
-	delete *connect.Client[v1.DeleteRequest, v1.DeleteResponse]
-	list   *connect.Client[v1.ListRequest, v1.ListResponse]
+	get    *connect.Client[v1.GetCityRequest, v1.GetCityResponse]
+	create *connect.Client[v1.CreateCityRequest, v1.CreateCityResponse]
+	update *connect.Client[v1.UpdateCityRequest, v1.UpdateCityResponse]
+	delete *connect.Client[v1.DeleteCityRequest, v1.DeleteCityResponse]
+	list   *connect.Client[v1.ListCityRequest, v1.ListCityResponse]
 }
 
 // Get calls api.v1.CityService.Get.
-func (c *cityServiceClient) Get(ctx context.Context, req *v1.GetRequest) (*v1.GetResponse, error) {
+func (c *cityServiceClient) Get(ctx context.Context, req *v1.GetCityRequest) (*v1.GetCityResponse, error) {
 	response, err := c.get.CallUnary(ctx, connect.NewRequest(req))
 	if response != nil {
 		return response.Msg, err
@@ -117,7 +117,7 @@ func (c *cityServiceClient) Get(ctx context.Context, req *v1.GetRequest) (*v1.Ge
 }
 
 // Create calls api.v1.CityService.Create.
-func (c *cityServiceClient) Create(ctx context.Context, req *v1.CreateRequest) (*v1.CreateResponse, error) {
+func (c *cityServiceClient) Create(ctx context.Context, req *v1.CreateCityRequest) (*v1.CreateCityResponse, error) {
 	response, err := c.create.CallUnary(ctx, connect.NewRequest(req))
 	if response != nil {
 		return response.Msg, err
@@ -126,7 +126,7 @@ func (c *cityServiceClient) Create(ctx context.Context, req *v1.CreateRequest) (
 }
 
 // Update calls api.v1.CityService.Update.
-func (c *cityServiceClient) Update(ctx context.Context, req *v1.UpdateRequest) (*v1.UpdateResponse, error) {
+func (c *cityServiceClient) Update(ctx context.Context, req *v1.UpdateCityRequest) (*v1.UpdateCityResponse, error) {
 	response, err := c.update.CallUnary(ctx, connect.NewRequest(req))
 	if response != nil {
 		return response.Msg, err
@@ -135,7 +135,7 @@ func (c *cityServiceClient) Update(ctx context.Context, req *v1.UpdateRequest) (
 }
 
 // Delete calls api.v1.CityService.Delete.
-func (c *cityServiceClient) Delete(ctx context.Context, req *v1.DeleteRequest) (*v1.DeleteResponse, error) {
+func (c *cityServiceClient) Delete(ctx context.Context, req *v1.DeleteCityRequest) (*v1.DeleteCityResponse, error) {
 	response, err := c.delete.CallUnary(ctx, connect.NewRequest(req))
 	if response != nil {
 		return response.Msg, err
@@ -144,7 +144,7 @@ func (c *cityServiceClient) Delete(ctx context.Context, req *v1.DeleteRequest) (
 }
 
 // List calls api.v1.CityService.List.
-func (c *cityServiceClient) List(ctx context.Context, req *v1.ListRequest) (*v1.ListResponse, error) {
+func (c *cityServiceClient) List(ctx context.Context, req *v1.ListCityRequest) (*v1.ListCityResponse, error) {
 	response, err := c.list.CallUnary(ctx, connect.NewRequest(req))
 	if response != nil {
 		return response.Msg, err
@@ -154,11 +154,11 @@ func (c *cityServiceClient) List(ctx context.Context, req *v1.ListRequest) (*v1.
 
 // CityServiceHandler is an implementation of the api.v1.CityService service.
 type CityServiceHandler interface {
-	Get(context.Context, *v1.GetRequest) (*v1.GetResponse, error)
-	Create(context.Context, *v1.CreateRequest) (*v1.CreateResponse, error)
-	Update(context.Context, *v1.UpdateRequest) (*v1.UpdateResponse, error)
-	Delete(context.Context, *v1.DeleteRequest) (*v1.DeleteResponse, error)
-	List(context.Context, *v1.ListRequest) (*v1.ListResponse, error)
+	Get(context.Context, *v1.GetCityRequest) (*v1.GetCityResponse, error)
+	Create(context.Context, *v1.CreateCityRequest) (*v1.CreateCityResponse, error)
+	Update(context.Context, *v1.UpdateCityRequest) (*v1.UpdateCityResponse, error)
+	Delete(context.Context, *v1.DeleteCityRequest) (*v1.DeleteCityResponse, error)
+	List(context.Context, *v1.ListCityRequest) (*v1.ListCityResponse, error)
 }
 
 // NewCityServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -219,22 +219,22 @@ func NewCityServiceHandler(svc CityServiceHandler, opts ...connect.HandlerOption
 // UnimplementedCityServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedCityServiceHandler struct{}
 
-func (UnimplementedCityServiceHandler) Get(context.Context, *v1.GetRequest) (*v1.GetResponse, error) {
+func (UnimplementedCityServiceHandler) Get(context.Context, *v1.GetCityRequest) (*v1.GetCityResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("api.v1.CityService.Get is not implemented"))
 }
 
-func (UnimplementedCityServiceHandler) Create(context.Context, *v1.CreateRequest) (*v1.CreateResponse, error) {
+func (UnimplementedCityServiceHandler) Create(context.Context, *v1.CreateCityRequest) (*v1.CreateCityResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("api.v1.CityService.Create is not implemented"))
 }
 
-func (UnimplementedCityServiceHandler) Update(context.Context, *v1.UpdateRequest) (*v1.UpdateResponse, error) {
+func (UnimplementedCityServiceHandler) Update(context.Context, *v1.UpdateCityRequest) (*v1.UpdateCityResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("api.v1.CityService.Update is not implemented"))
 }
 
-func (UnimplementedCityServiceHandler) Delete(context.Context, *v1.DeleteRequest) (*v1.DeleteResponse, error) {
+func (UnimplementedCityServiceHandler) Delete(context.Context, *v1.DeleteCityRequest) (*v1.DeleteCityResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("api.v1.CityService.Delete is not implemented"))
 }
 
-func (UnimplementedCityServiceHandler) List(context.Context, *v1.ListRequest) (*v1.ListResponse, error) {
+func (UnimplementedCityServiceHandler) List(context.Context, *v1.ListCityRequest) (*v1.ListCityResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("api.v1.CityService.List is not implemented"))
 }

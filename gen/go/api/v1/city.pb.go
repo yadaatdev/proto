@@ -73,27 +73,27 @@ func (x *City) GetName() string {
 	return ""
 }
 
-type GetRequest struct {
+type GetCityRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetRequest) Reset() {
-	*x = GetRequest{}
+func (x *GetCityRequest) Reset() {
+	*x = GetCityRequest{}
 	mi := &file_api_v1_city_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetRequest) String() string {
+func (x *GetCityRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetRequest) ProtoMessage() {}
+func (*GetCityRequest) ProtoMessage() {}
 
-func (x *GetRequest) ProtoReflect() protoreflect.Message {
+func (x *GetCityRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_api_v1_city_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -105,39 +105,39 @@ func (x *GetRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetRequest.ProtoReflect.Descriptor instead.
-func (*GetRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetCityRequest.ProtoReflect.Descriptor instead.
+func (*GetCityRequest) Descriptor() ([]byte, []int) {
 	return file_api_v1_city_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *GetRequest) GetId() string {
+func (x *GetCityRequest) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-type GetResponse struct {
+type GetCityResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	City          *City                  `protobuf:"bytes,1,opt,name=city,proto3" json:"city,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetResponse) Reset() {
-	*x = GetResponse{}
+func (x *GetCityResponse) Reset() {
+	*x = GetCityResponse{}
 	mi := &file_api_v1_city_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetResponse) String() string {
+func (x *GetCityResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetResponse) ProtoMessage() {}
+func (*GetCityResponse) ProtoMessage() {}
 
-func (x *GetResponse) ProtoReflect() protoreflect.Message {
+func (x *GetCityResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_api_v1_city_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -149,39 +149,39 @@ func (x *GetResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetResponse.ProtoReflect.Descriptor instead.
-func (*GetResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetCityResponse.ProtoReflect.Descriptor instead.
+func (*GetCityResponse) Descriptor() ([]byte, []int) {
 	return file_api_v1_city_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *GetResponse) GetCity() *City {
+func (x *GetCityResponse) GetCity() *City {
 	if x != nil {
 		return x.City
 	}
 	return nil
 }
 
-type CreateRequest struct {
+type CreateCityRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CreateRequest) Reset() {
-	*x = CreateRequest{}
+func (x *CreateCityRequest) Reset() {
+	*x = CreateCityRequest{}
 	mi := &file_api_v1_city_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateRequest) String() string {
+func (x *CreateCityRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateRequest) ProtoMessage() {}
+func (*CreateCityRequest) ProtoMessage() {}
 
-func (x *CreateRequest) ProtoReflect() protoreflect.Message {
+func (x *CreateCityRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_api_v1_city_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -193,39 +193,39 @@ func (x *CreateRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateRequest.ProtoReflect.Descriptor instead.
-func (*CreateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateCityRequest.ProtoReflect.Descriptor instead.
+func (*CreateCityRequest) Descriptor() ([]byte, []int) {
 	return file_api_v1_city_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *CreateRequest) GetName() string {
+func (x *CreateCityRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type CreateResponse struct {
+type CreateCityResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	City          *City                  `protobuf:"bytes,1,opt,name=city,proto3" json:"city,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CreateResponse) Reset() {
-	*x = CreateResponse{}
+func (x *CreateCityResponse) Reset() {
+	*x = CreateCityResponse{}
 	mi := &file_api_v1_city_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CreateResponse) String() string {
+func (x *CreateCityResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateResponse) ProtoMessage() {}
+func (*CreateCityResponse) ProtoMessage() {}
 
-func (x *CreateResponse) ProtoReflect() protoreflect.Message {
+func (x *CreateCityResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_api_v1_city_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -237,19 +237,19 @@ func (x *CreateResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateResponse.ProtoReflect.Descriptor instead.
-func (*CreateResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateCityResponse.ProtoReflect.Descriptor instead.
+func (*CreateCityResponse) Descriptor() ([]byte, []int) {
 	return file_api_v1_city_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *CreateResponse) GetCity() *City {
+func (x *CreateCityResponse) GetCity() *City {
 	if x != nil {
 		return x.City
 	}
 	return nil
 }
 
-type UpdateRequest struct {
+type UpdateCityRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -257,20 +257,20 @@ type UpdateRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UpdateRequest) Reset() {
-	*x = UpdateRequest{}
+func (x *UpdateCityRequest) Reset() {
+	*x = UpdateCityRequest{}
 	mi := &file_api_v1_city_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateRequest) String() string {
+func (x *UpdateCityRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateRequest) ProtoMessage() {}
+func (*UpdateCityRequest) ProtoMessage() {}
 
-func (x *UpdateRequest) ProtoReflect() protoreflect.Message {
+func (x *UpdateCityRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_api_v1_city_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -282,46 +282,46 @@ func (x *UpdateRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateRequest.ProtoReflect.Descriptor instead.
-func (*UpdateRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateCityRequest.ProtoReflect.Descriptor instead.
+func (*UpdateCityRequest) Descriptor() ([]byte, []int) {
 	return file_api_v1_city_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *UpdateRequest) GetId() string {
+func (x *UpdateCityRequest) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *UpdateRequest) GetName() string {
+func (x *UpdateCityRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type UpdateResponse struct {
+type UpdateCityResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	City          *City                  `protobuf:"bytes,1,opt,name=city,proto3" json:"city,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UpdateResponse) Reset() {
-	*x = UpdateResponse{}
+func (x *UpdateCityResponse) Reset() {
+	*x = UpdateCityResponse{}
 	mi := &file_api_v1_city_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UpdateResponse) String() string {
+func (x *UpdateCityResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateResponse) ProtoMessage() {}
+func (*UpdateCityResponse) ProtoMessage() {}
 
-func (x *UpdateResponse) ProtoReflect() protoreflect.Message {
+func (x *UpdateCityResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_api_v1_city_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -333,39 +333,39 @@ func (x *UpdateResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateResponse.ProtoReflect.Descriptor instead.
-func (*UpdateResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateCityResponse.ProtoReflect.Descriptor instead.
+func (*UpdateCityResponse) Descriptor() ([]byte, []int) {
 	return file_api_v1_city_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *UpdateResponse) GetCity() *City {
+func (x *UpdateCityResponse) GetCity() *City {
 	if x != nil {
 		return x.City
 	}
 	return nil
 }
 
-type DeleteRequest struct {
+type DeleteCityRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteRequest) Reset() {
-	*x = DeleteRequest{}
+func (x *DeleteCityRequest) Reset() {
+	*x = DeleteCityRequest{}
 	mi := &file_api_v1_city_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteRequest) String() string {
+func (x *DeleteCityRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteRequest) ProtoMessage() {}
+func (*DeleteCityRequest) ProtoMessage() {}
 
-func (x *DeleteRequest) ProtoReflect() protoreflect.Message {
+func (x *DeleteCityRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_api_v1_city_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -377,38 +377,38 @@ func (x *DeleteRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteRequest.ProtoReflect.Descriptor instead.
-func (*DeleteRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteCityRequest.ProtoReflect.Descriptor instead.
+func (*DeleteCityRequest) Descriptor() ([]byte, []int) {
 	return file_api_v1_city_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *DeleteRequest) GetId() string {
+func (x *DeleteCityRequest) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-type DeleteResponse struct {
+type DeleteCityResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DeleteResponse) Reset() {
-	*x = DeleteResponse{}
+func (x *DeleteCityResponse) Reset() {
+	*x = DeleteCityResponse{}
 	mi := &file_api_v1_city_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DeleteResponse) String() string {
+func (x *DeleteCityResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteResponse) ProtoMessage() {}
+func (*DeleteCityResponse) ProtoMessage() {}
 
-func (x *DeleteResponse) ProtoReflect() protoreflect.Message {
+func (x *DeleteCityResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_api_v1_city_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -420,31 +420,31 @@ func (x *DeleteResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteResponse.ProtoReflect.Descriptor instead.
-func (*DeleteResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteCityResponse.ProtoReflect.Descriptor instead.
+func (*DeleteCityResponse) Descriptor() ([]byte, []int) {
 	return file_api_v1_city_proto_rawDescGZIP(), []int{8}
 }
 
-type ListRequest struct {
+type ListCityRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListRequest) Reset() {
-	*x = ListRequest{}
+func (x *ListCityRequest) Reset() {
+	*x = ListCityRequest{}
 	mi := &file_api_v1_city_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListRequest) String() string {
+func (x *ListCityRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListRequest) ProtoMessage() {}
+func (*ListCityRequest) ProtoMessage() {}
 
-func (x *ListRequest) ProtoReflect() protoreflect.Message {
+func (x *ListCityRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_api_v1_city_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -456,32 +456,32 @@ func (x *ListRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListRequest.ProtoReflect.Descriptor instead.
-func (*ListRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListCityRequest.ProtoReflect.Descriptor instead.
+func (*ListCityRequest) Descriptor() ([]byte, []int) {
 	return file_api_v1_city_proto_rawDescGZIP(), []int{9}
 }
 
-type ListResponse struct {
+type ListCityResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Cities        []*Option              `protobuf:"bytes,1,rep,name=cities,proto3" json:"cities,omitempty"`
+	Options       []*Option              `protobuf:"bytes,1,rep,name=options,proto3" json:"options,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListResponse) Reset() {
-	*x = ListResponse{}
+func (x *ListCityResponse) Reset() {
+	*x = ListCityResponse{}
 	mi := &file_api_v1_city_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListResponse) String() string {
+func (x *ListCityResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListResponse) ProtoMessage() {}
+func (*ListCityResponse) ProtoMessage() {}
 
-func (x *ListResponse) ProtoReflect() protoreflect.Message {
+func (x *ListCityResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_api_v1_city_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -493,14 +493,14 @@ func (x *ListResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListResponse.ProtoReflect.Descriptor instead.
-func (*ListResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListCityResponse.ProtoReflect.Descriptor instead.
+func (*ListCityResponse) Descriptor() ([]byte, []int) {
 	return file_api_v1_city_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *ListResponse) GetCities() []*Option {
+func (x *ListCityResponse) GetOptions() []*Option {
 	if x != nil {
-		return x.Cities
+		return x.Options
 	}
 	return nil
 }
@@ -512,33 +512,32 @@ const file_api_v1_city_proto_rawDesc = "" +
 	"\x11api/v1/city.proto\x12\x06api.v1\x1a\x13api/v1/common.proto\"*\n" +
 	"\x04City\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\"\x1c\n" +
-	"\n" +
-	"GetRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"/\n" +
-	"\vGetResponse\x12 \n" +
-	"\x04city\x18\x01 \x01(\v2\f.api.v1.CityR\x04city\"#\n" +
-	"\rCreateRequest\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\"2\n" +
-	"\x0eCreateResponse\x12 \n" +
-	"\x04city\x18\x01 \x01(\v2\f.api.v1.CityR\x04city\"3\n" +
-	"\rUpdateRequest\x12\x0e\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\" \n" +
+	"\x0eGetCityRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"3\n" +
+	"\x0fGetCityResponse\x12 \n" +
+	"\x04city\x18\x01 \x01(\v2\f.api.v1.CityR\x04city\"'\n" +
+	"\x11CreateCityRequest\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\"6\n" +
+	"\x12CreateCityResponse\x12 \n" +
+	"\x04city\x18\x01 \x01(\v2\f.api.v1.CityR\x04city\"7\n" +
+	"\x11UpdateCityRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\"2\n" +
-	"\x0eUpdateResponse\x12 \n" +
-	"\x04city\x18\x01 \x01(\v2\f.api.v1.CityR\x04city\"\x1f\n" +
-	"\rDeleteRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"\x10\n" +
-	"\x0eDeleteResponse\"\r\n" +
-	"\vListRequest\"6\n" +
-	"\fListResponse\x12&\n" +
-	"\x06cities\x18\x01 \x03(\v2\x0e.api.v1.OptionR\x06cities2\x9b\x02\n" +
-	"\vCityService\x12.\n" +
-	"\x03Get\x12\x12.api.v1.GetRequest\x1a\x13.api.v1.GetResponse\x127\n" +
-	"\x06Create\x12\x15.api.v1.CreateRequest\x1a\x16.api.v1.CreateResponse\x127\n" +
-	"\x06Update\x12\x15.api.v1.UpdateRequest\x1a\x16.api.v1.UpdateResponse\x127\n" +
-	"\x06Delete\x12\x15.api.v1.DeleteRequest\x1a\x16.api.v1.DeleteResponse\x121\n" +
-	"\x04List\x12\x13.api.v1.ListRequest\x1a\x14.api.v1.ListResponseB\x80\x01\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\"6\n" +
+	"\x12UpdateCityResponse\x12 \n" +
+	"\x04city\x18\x01 \x01(\v2\f.api.v1.CityR\x04city\"#\n" +
+	"\x11DeleteCityRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"\x14\n" +
+	"\x12DeleteCityResponse\"\x11\n" +
+	"\x0fListCityRequest\"<\n" +
+	"\x10ListCityResponse\x12(\n" +
+	"\aoptions\x18\x01 \x03(\v2\x0e.api.v1.OptionR\aoptions2\xc3\x02\n" +
+	"\vCityService\x126\n" +
+	"\x03Get\x12\x16.api.v1.GetCityRequest\x1a\x17.api.v1.GetCityResponse\x12?\n" +
+	"\x06Create\x12\x19.api.v1.CreateCityRequest\x1a\x1a.api.v1.CreateCityResponse\x12?\n" +
+	"\x06Update\x12\x19.api.v1.UpdateCityRequest\x1a\x1a.api.v1.UpdateCityResponse\x12?\n" +
+	"\x06Delete\x12\x19.api.v1.DeleteCityRequest\x1a\x1a.api.v1.DeleteCityResponse\x129\n" +
+	"\x04List\x12\x17.api.v1.ListCityRequest\x1a\x18.api.v1.ListCityResponseB\x80\x01\n" +
 	"\n" +
 	"com.api.v1B\tCityProtoP\x01Z.github.com/yadaatdev/proto/gen/go/api/v1;apiv1\xa2\x02\x03AXX\xaa\x02\x06Api.V1\xca\x02\x06Api\\V1\xe2\x02\x12Api\\V1\\GPBMetadata\xea\x02\aApi::V1b\x06proto3"
 
@@ -556,34 +555,34 @@ func file_api_v1_city_proto_rawDescGZIP() []byte {
 
 var file_api_v1_city_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_api_v1_city_proto_goTypes = []any{
-	(*City)(nil),           // 0: api.v1.City
-	(*GetRequest)(nil),     // 1: api.v1.GetRequest
-	(*GetResponse)(nil),    // 2: api.v1.GetResponse
-	(*CreateRequest)(nil),  // 3: api.v1.CreateRequest
-	(*CreateResponse)(nil), // 4: api.v1.CreateResponse
-	(*UpdateRequest)(nil),  // 5: api.v1.UpdateRequest
-	(*UpdateResponse)(nil), // 6: api.v1.UpdateResponse
-	(*DeleteRequest)(nil),  // 7: api.v1.DeleteRequest
-	(*DeleteResponse)(nil), // 8: api.v1.DeleteResponse
-	(*ListRequest)(nil),    // 9: api.v1.ListRequest
-	(*ListResponse)(nil),   // 10: api.v1.ListResponse
-	(*Option)(nil),         // 11: api.v1.Option
+	(*City)(nil),               // 0: api.v1.City
+	(*GetCityRequest)(nil),     // 1: api.v1.GetCityRequest
+	(*GetCityResponse)(nil),    // 2: api.v1.GetCityResponse
+	(*CreateCityRequest)(nil),  // 3: api.v1.CreateCityRequest
+	(*CreateCityResponse)(nil), // 4: api.v1.CreateCityResponse
+	(*UpdateCityRequest)(nil),  // 5: api.v1.UpdateCityRequest
+	(*UpdateCityResponse)(nil), // 6: api.v1.UpdateCityResponse
+	(*DeleteCityRequest)(nil),  // 7: api.v1.DeleteCityRequest
+	(*DeleteCityResponse)(nil), // 8: api.v1.DeleteCityResponse
+	(*ListCityRequest)(nil),    // 9: api.v1.ListCityRequest
+	(*ListCityResponse)(nil),   // 10: api.v1.ListCityResponse
+	(*Option)(nil),             // 11: api.v1.Option
 }
 var file_api_v1_city_proto_depIdxs = []int32{
-	0,  // 0: api.v1.GetResponse.city:type_name -> api.v1.City
-	0,  // 1: api.v1.CreateResponse.city:type_name -> api.v1.City
-	0,  // 2: api.v1.UpdateResponse.city:type_name -> api.v1.City
-	11, // 3: api.v1.ListResponse.cities:type_name -> api.v1.Option
-	1,  // 4: api.v1.CityService.Get:input_type -> api.v1.GetRequest
-	3,  // 5: api.v1.CityService.Create:input_type -> api.v1.CreateRequest
-	5,  // 6: api.v1.CityService.Update:input_type -> api.v1.UpdateRequest
-	7,  // 7: api.v1.CityService.Delete:input_type -> api.v1.DeleteRequest
-	9,  // 8: api.v1.CityService.List:input_type -> api.v1.ListRequest
-	2,  // 9: api.v1.CityService.Get:output_type -> api.v1.GetResponse
-	4,  // 10: api.v1.CityService.Create:output_type -> api.v1.CreateResponse
-	6,  // 11: api.v1.CityService.Update:output_type -> api.v1.UpdateResponse
-	8,  // 12: api.v1.CityService.Delete:output_type -> api.v1.DeleteResponse
-	10, // 13: api.v1.CityService.List:output_type -> api.v1.ListResponse
+	0,  // 0: api.v1.GetCityResponse.city:type_name -> api.v1.City
+	0,  // 1: api.v1.CreateCityResponse.city:type_name -> api.v1.City
+	0,  // 2: api.v1.UpdateCityResponse.city:type_name -> api.v1.City
+	11, // 3: api.v1.ListCityResponse.options:type_name -> api.v1.Option
+	1,  // 4: api.v1.CityService.Get:input_type -> api.v1.GetCityRequest
+	3,  // 5: api.v1.CityService.Create:input_type -> api.v1.CreateCityRequest
+	5,  // 6: api.v1.CityService.Update:input_type -> api.v1.UpdateCityRequest
+	7,  // 7: api.v1.CityService.Delete:input_type -> api.v1.DeleteCityRequest
+	9,  // 8: api.v1.CityService.List:input_type -> api.v1.ListCityRequest
+	2,  // 9: api.v1.CityService.Get:output_type -> api.v1.GetCityResponse
+	4,  // 10: api.v1.CityService.Create:output_type -> api.v1.CreateCityResponse
+	6,  // 11: api.v1.CityService.Update:output_type -> api.v1.UpdateCityResponse
+	8,  // 12: api.v1.CityService.Delete:output_type -> api.v1.DeleteCityResponse
+	10, // 13: api.v1.CityService.List:output_type -> api.v1.ListCityResponse
 	9,  // [9:14] is the sub-list for method output_type
 	4,  // [4:9] is the sub-list for method input_type
 	4,  // [4:4] is the sub-list for extension type_name

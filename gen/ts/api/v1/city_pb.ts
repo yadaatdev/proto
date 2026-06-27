@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file api/v1/city.proto.
  */
 export const file_api_v1_city: GenFile = /*@__PURE__*/
-  fileDesc("ChFhcGkvdjEvY2l0eS5wcm90bxIGYXBpLnYxIiAKBENpdHkSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCSIYCgpHZXRSZXF1ZXN0EgoKAmlkGAEgASgJIikKC0dldFJlc3BvbnNlEhoKBGNpdHkYASABKAsyDC5hcGkudjEuQ2l0eSIdCg1DcmVhdGVSZXF1ZXN0EgwKBG5hbWUYASABKAkiLAoOQ3JlYXRlUmVzcG9uc2USGgoEY2l0eRgBIAEoCzIMLmFwaS52MS5DaXR5IikKDVVwZGF0ZVJlcXVlc3QSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCSIsCg5VcGRhdGVSZXNwb25zZRIaCgRjaXR5GAEgASgLMgwuYXBpLnYxLkNpdHkiGwoNRGVsZXRlUmVxdWVzdBIKCgJpZBgBIAEoCSIQCg5EZWxldGVSZXNwb25zZSINCgtMaXN0UmVxdWVzdCIuCgxMaXN0UmVzcG9uc2USHgoGY2l0aWVzGAEgAygLMg4uYXBpLnYxLk9wdGlvbjKbAgoLQ2l0eVNlcnZpY2USLgoDR2V0EhIuYXBpLnYxLkdldFJlcXVlc3QaEy5hcGkudjEuR2V0UmVzcG9uc2USNwoGQ3JlYXRlEhUuYXBpLnYxLkNyZWF0ZVJlcXVlc3QaFi5hcGkudjEuQ3JlYXRlUmVzcG9uc2USNwoGVXBkYXRlEhUuYXBpLnYxLlVwZGF0ZVJlcXVlc3QaFi5hcGkudjEuVXBkYXRlUmVzcG9uc2USNwoGRGVsZXRlEhUuYXBpLnYxLkRlbGV0ZVJlcXVlc3QaFi5hcGkudjEuRGVsZXRlUmVzcG9uc2USMQoETGlzdBITLmFwaS52MS5MaXN0UmVxdWVzdBoULmFwaS52MS5MaXN0UmVzcG9uc2VCgAEKCmNvbS5hcGkudjFCCUNpdHlQcm90b1ABWi5naXRodWIuY29tL3lhZGFhdGRldi9wcm90by9nZW4vZ28vYXBpL3YxO2FwaXYxogIDQVhYqgIGQXBpLlYxygIGQXBpXFYx4gISQXBpXFYxXEdQQk1ldGFkYXRh6gIHQXBpOjpWMWIGcHJvdG8z", [file_api_v1_common]);
+  fileDesc("ChFhcGkvdjEvY2l0eS5wcm90bxIGYXBpLnYxIiAKBENpdHkSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCSIcCg5HZXRDaXR5UmVxdWVzdBIKCgJpZBgBIAEoCSItCg9HZXRDaXR5UmVzcG9uc2USGgoEY2l0eRgBIAEoCzIMLmFwaS52MS5DaXR5IiEKEUNyZWF0ZUNpdHlSZXF1ZXN0EgwKBG5hbWUYASABKAkiMAoSQ3JlYXRlQ2l0eVJlc3BvbnNlEhoKBGNpdHkYASABKAsyDC5hcGkudjEuQ2l0eSItChFVcGRhdGVDaXR5UmVxdWVzdBIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJIjAKElVwZGF0ZUNpdHlSZXNwb25zZRIaCgRjaXR5GAEgASgLMgwuYXBpLnYxLkNpdHkiHwoRRGVsZXRlQ2l0eVJlcXVlc3QSCgoCaWQYASABKAkiFAoSRGVsZXRlQ2l0eVJlc3BvbnNlIhEKD0xpc3RDaXR5UmVxdWVzdCIzChBMaXN0Q2l0eVJlc3BvbnNlEh8KB29wdGlvbnMYASADKAsyDi5hcGkudjEuT3B0aW9uMsMCCgtDaXR5U2VydmljZRI2CgNHZXQSFi5hcGkudjEuR2V0Q2l0eVJlcXVlc3QaFy5hcGkudjEuR2V0Q2l0eVJlc3BvbnNlEj8KBkNyZWF0ZRIZLmFwaS52MS5DcmVhdGVDaXR5UmVxdWVzdBoaLmFwaS52MS5DcmVhdGVDaXR5UmVzcG9uc2USPwoGVXBkYXRlEhkuYXBpLnYxLlVwZGF0ZUNpdHlSZXF1ZXN0GhouYXBpLnYxLlVwZGF0ZUNpdHlSZXNwb25zZRI/CgZEZWxldGUSGS5hcGkudjEuRGVsZXRlQ2l0eVJlcXVlc3QaGi5hcGkudjEuRGVsZXRlQ2l0eVJlc3BvbnNlEjkKBExpc3QSFy5hcGkudjEuTGlzdENpdHlSZXF1ZXN0GhguYXBpLnYxLkxpc3RDaXR5UmVzcG9uc2VCgAEKCmNvbS5hcGkudjFCCUNpdHlQcm90b1ABWi5naXRodWIuY29tL3lhZGFhdGRldi9wcm90by9nZW4vZ28vYXBpL3YxO2FwaXYxogIDQVhYqgIGQXBpLlYxygIGQXBpXFYx4gISQXBpXFYxXEdQQk1ldGFkYXRh6gIHQXBpOjpWMWIGcHJvdG8z", [file_api_v1_common]);
 
 /**
  * @generated from message api.v1.City
@@ -37,9 +37,9 @@ export const CitySchema: GenMessage<City> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 0);
 
 /**
- * @generated from message api.v1.GetRequest
+ * @generated from message api.v1.GetCityRequest
  */
-export type GetRequest = Message<"api.v1.GetRequest"> & {
+export type GetCityRequest = Message<"api.v1.GetCityRequest"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -47,16 +47,16 @@ export type GetRequest = Message<"api.v1.GetRequest"> & {
 };
 
 /**
- * Describes the message api.v1.GetRequest.
- * Use `create(GetRequestSchema)` to create a new message.
+ * Describes the message api.v1.GetCityRequest.
+ * Use `create(GetCityRequestSchema)` to create a new message.
  */
-export const GetRequestSchema: GenMessage<GetRequest> = /*@__PURE__*/
+export const GetCityRequestSchema: GenMessage<GetCityRequest> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 1);
 
 /**
- * @generated from message api.v1.GetResponse
+ * @generated from message api.v1.GetCityResponse
  */
-export type GetResponse = Message<"api.v1.GetResponse"> & {
+export type GetCityResponse = Message<"api.v1.GetCityResponse"> & {
   /**
    * @generated from field: api.v1.City city = 1;
    */
@@ -64,16 +64,16 @@ export type GetResponse = Message<"api.v1.GetResponse"> & {
 };
 
 /**
- * Describes the message api.v1.GetResponse.
- * Use `create(GetResponseSchema)` to create a new message.
+ * Describes the message api.v1.GetCityResponse.
+ * Use `create(GetCityResponseSchema)` to create a new message.
  */
-export const GetResponseSchema: GenMessage<GetResponse> = /*@__PURE__*/
+export const GetCityResponseSchema: GenMessage<GetCityResponse> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 2);
 
 /**
- * @generated from message api.v1.CreateRequest
+ * @generated from message api.v1.CreateCityRequest
  */
-export type CreateRequest = Message<"api.v1.CreateRequest"> & {
+export type CreateCityRequest = Message<"api.v1.CreateCityRequest"> & {
   /**
    * @generated from field: string name = 1;
    */
@@ -81,16 +81,16 @@ export type CreateRequest = Message<"api.v1.CreateRequest"> & {
 };
 
 /**
- * Describes the message api.v1.CreateRequest.
- * Use `create(CreateRequestSchema)` to create a new message.
+ * Describes the message api.v1.CreateCityRequest.
+ * Use `create(CreateCityRequestSchema)` to create a new message.
  */
-export const CreateRequestSchema: GenMessage<CreateRequest> = /*@__PURE__*/
+export const CreateCityRequestSchema: GenMessage<CreateCityRequest> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 3);
 
 /**
- * @generated from message api.v1.CreateResponse
+ * @generated from message api.v1.CreateCityResponse
  */
-export type CreateResponse = Message<"api.v1.CreateResponse"> & {
+export type CreateCityResponse = Message<"api.v1.CreateCityResponse"> & {
   /**
    * @generated from field: api.v1.City city = 1;
    */
@@ -98,16 +98,16 @@ export type CreateResponse = Message<"api.v1.CreateResponse"> & {
 };
 
 /**
- * Describes the message api.v1.CreateResponse.
- * Use `create(CreateResponseSchema)` to create a new message.
+ * Describes the message api.v1.CreateCityResponse.
+ * Use `create(CreateCityResponseSchema)` to create a new message.
  */
-export const CreateResponseSchema: GenMessage<CreateResponse> = /*@__PURE__*/
+export const CreateCityResponseSchema: GenMessage<CreateCityResponse> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 4);
 
 /**
- * @generated from message api.v1.UpdateRequest
+ * @generated from message api.v1.UpdateCityRequest
  */
-export type UpdateRequest = Message<"api.v1.UpdateRequest"> & {
+export type UpdateCityRequest = Message<"api.v1.UpdateCityRequest"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -120,16 +120,16 @@ export type UpdateRequest = Message<"api.v1.UpdateRequest"> & {
 };
 
 /**
- * Describes the message api.v1.UpdateRequest.
- * Use `create(UpdateRequestSchema)` to create a new message.
+ * Describes the message api.v1.UpdateCityRequest.
+ * Use `create(UpdateCityRequestSchema)` to create a new message.
  */
-export const UpdateRequestSchema: GenMessage<UpdateRequest> = /*@__PURE__*/
+export const UpdateCityRequestSchema: GenMessage<UpdateCityRequest> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 5);
 
 /**
- * @generated from message api.v1.UpdateResponse
+ * @generated from message api.v1.UpdateCityResponse
  */
-export type UpdateResponse = Message<"api.v1.UpdateResponse"> & {
+export type UpdateCityResponse = Message<"api.v1.UpdateCityResponse"> & {
   /**
    * @generated from field: api.v1.City city = 1;
    */
@@ -137,16 +137,16 @@ export type UpdateResponse = Message<"api.v1.UpdateResponse"> & {
 };
 
 /**
- * Describes the message api.v1.UpdateResponse.
- * Use `create(UpdateResponseSchema)` to create a new message.
+ * Describes the message api.v1.UpdateCityResponse.
+ * Use `create(UpdateCityResponseSchema)` to create a new message.
  */
-export const UpdateResponseSchema: GenMessage<UpdateResponse> = /*@__PURE__*/
+export const UpdateCityResponseSchema: GenMessage<UpdateCityResponse> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 6);
 
 /**
- * @generated from message api.v1.DeleteRequest
+ * @generated from message api.v1.DeleteCityRequest
  */
-export type DeleteRequest = Message<"api.v1.DeleteRequest"> & {
+export type DeleteCityRequest = Message<"api.v1.DeleteCityRequest"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -154,53 +154,53 @@ export type DeleteRequest = Message<"api.v1.DeleteRequest"> & {
 };
 
 /**
- * Describes the message api.v1.DeleteRequest.
- * Use `create(DeleteRequestSchema)` to create a new message.
+ * Describes the message api.v1.DeleteCityRequest.
+ * Use `create(DeleteCityRequestSchema)` to create a new message.
  */
-export const DeleteRequestSchema: GenMessage<DeleteRequest> = /*@__PURE__*/
+export const DeleteCityRequestSchema: GenMessage<DeleteCityRequest> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 7);
 
 /**
- * @generated from message api.v1.DeleteResponse
+ * @generated from message api.v1.DeleteCityResponse
  */
-export type DeleteResponse = Message<"api.v1.DeleteResponse"> & {
+export type DeleteCityResponse = Message<"api.v1.DeleteCityResponse"> & {
 };
 
 /**
- * Describes the message api.v1.DeleteResponse.
- * Use `create(DeleteResponseSchema)` to create a new message.
+ * Describes the message api.v1.DeleteCityResponse.
+ * Use `create(DeleteCityResponseSchema)` to create a new message.
  */
-export const DeleteResponseSchema: GenMessage<DeleteResponse> = /*@__PURE__*/
+export const DeleteCityResponseSchema: GenMessage<DeleteCityResponse> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 8);
 
 /**
- * @generated from message api.v1.ListRequest
+ * @generated from message api.v1.ListCityRequest
  */
-export type ListRequest = Message<"api.v1.ListRequest"> & {
+export type ListCityRequest = Message<"api.v1.ListCityRequest"> & {
 };
 
 /**
- * Describes the message api.v1.ListRequest.
- * Use `create(ListRequestSchema)` to create a new message.
+ * Describes the message api.v1.ListCityRequest.
+ * Use `create(ListCityRequestSchema)` to create a new message.
  */
-export const ListRequestSchema: GenMessage<ListRequest> = /*@__PURE__*/
+export const ListCityRequestSchema: GenMessage<ListCityRequest> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 9);
 
 /**
- * @generated from message api.v1.ListResponse
+ * @generated from message api.v1.ListCityResponse
  */
-export type ListResponse = Message<"api.v1.ListResponse"> & {
+export type ListCityResponse = Message<"api.v1.ListCityResponse"> & {
   /**
-   * @generated from field: repeated api.v1.Option cities = 1;
+   * @generated from field: repeated api.v1.Option options = 1;
    */
-  cities: Option[];
+  options: Option[];
 };
 
 /**
- * Describes the message api.v1.ListResponse.
- * Use `create(ListResponseSchema)` to create a new message.
+ * Describes the message api.v1.ListCityResponse.
+ * Use `create(ListCityResponseSchema)` to create a new message.
  */
-export const ListResponseSchema: GenMessage<ListResponse> = /*@__PURE__*/
+export const ListCityResponseSchema: GenMessage<ListCityResponse> = /*@__PURE__*/
   messageDesc(file_api_v1_city, 10);
 
 /**
@@ -212,40 +212,40 @@ export const CityService: GenService<{
    */
   get: {
     methodKind: "unary";
-    input: typeof GetRequestSchema;
-    output: typeof GetResponseSchema;
+    input: typeof GetCityRequestSchema;
+    output: typeof GetCityResponseSchema;
   },
   /**
    * @generated from rpc api.v1.CityService.Create
    */
   create: {
     methodKind: "unary";
-    input: typeof CreateRequestSchema;
-    output: typeof CreateResponseSchema;
+    input: typeof CreateCityRequestSchema;
+    output: typeof CreateCityResponseSchema;
   },
   /**
    * @generated from rpc api.v1.CityService.Update
    */
   update: {
     methodKind: "unary";
-    input: typeof UpdateRequestSchema;
-    output: typeof UpdateResponseSchema;
+    input: typeof UpdateCityRequestSchema;
+    output: typeof UpdateCityResponseSchema;
   },
   /**
    * @generated from rpc api.v1.CityService.Delete
    */
   delete: {
     methodKind: "unary";
-    input: typeof DeleteRequestSchema;
-    output: typeof DeleteResponseSchema;
+    input: typeof DeleteCityRequestSchema;
+    output: typeof DeleteCityResponseSchema;
   },
   /**
    * @generated from rpc api.v1.CityService.List
    */
   list: {
     methodKind: "unary";
-    input: typeof ListRequestSchema;
-    output: typeof ListResponseSchema;
+    input: typeof ListCityRequestSchema;
+    output: typeof ListCityResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_api_v1_city, 0);

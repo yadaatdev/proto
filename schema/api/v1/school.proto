@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package api.v1;
+
+import "api/v1/common.proto";
+
+message School {
+  string id = 1;
+  string name = 2;
+  string city_id = 3;
+}
+
+message GetSchoolRequest {
+  string id = 1;
+}
+
+message GetSchoolResponse {
+  School school = 1;
+}
+
+message CreateSchoolRequest {
+  string name = 1;
+  string city_id = 2;
+}
+
+message CreateSchoolResponse {
+  School school = 1;
+}
+
+message UpdateSchoolRequest {
+  string id = 1;
+  string name = 2;
+  string city_id = 3;
+}
+
+message UpdateSchoolResponse {
+  School school = 1;
+}
+
+message DeleteSchoolRequest {
+  string id = 1;
+}
+
+message DeleteSchoolResponse {}
+
+message ListSchoolRequest {}
+
+message ListSchoolResponse {
+  repeated Option options = 1;
+}
+
+service SchoolService {
+  rpc Get(GetSchoolRequest) returns (GetSchoolResponse);
+  rpc Create(CreateSchoolRequest) returns (CreateSchoolResponse);
+  rpc Update(UpdateSchoolRequest) returns (UpdateSchoolResponse);
+  rpc Delete(DeleteSchoolRequest) returns (DeleteSchoolResponse);
+  rpc List(ListSchoolRequest) returns (ListSchoolResponse);
+}
