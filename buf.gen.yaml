@@ -15,6 +15,6 @@ plugins:
       - simple
   - remote: buf.build/bufbuild/es
     out: gen/ts
-    opt: target=ts
+    opt: target=js+dts
 inputs:
   - directory: schema
