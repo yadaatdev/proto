@@ -2,24 +2,27 @@ name: release
 on:
   push:
     tags: ['v*']
-
 jobs:
   npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11
       - uses: actions/setup-node@v6
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
-      - run: corepack enable
-      - run: npm version "${GITHUB_REF_NAME#v}" --no-git-tag-version
+      - run: pnpm version "${GITHUB_REF_NAME#v}" --no-git-tag-version
       - run: pnpm publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   github:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v7
       - name: Create GitHub Release
