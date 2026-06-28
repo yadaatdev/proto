@@ -26,6 +26,7 @@ type School struct {
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	CityId        string                 `protobuf:"bytes,3,opt,name=city_id,json=cityId,proto3" json:"city_id,omitempty"`
+	CityName      string                 `protobuf:"bytes,4,opt,name=city_name,json=cityName,proto3" json:"city_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -77,6 +78,13 @@ func (x *School) GetName() string {
 func (x *School) GetCityId() string {
 	if x != nil {
 		return x.CityId
+	}
+	return ""
+}
+
+func (x *School) GetCityName() string {
+	if x != nil {
+		return x.CityName
 	}
 	return ""
 }
@@ -533,11 +541,12 @@ var File_api_v1_school_proto protoreflect.FileDescriptor
 
 const file_api_v1_school_proto_rawDesc = "" +
 	"\n" +
-	"\x13api/v1/school.proto\x12\x06api.v1\x1a\x13api/v1/common.proto\"E\n" +
+	"\x13api/v1/school.proto\x12\x06api.v1\x1a\x13api/v1/common.proto\"b\n" +
 	"\x06School\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x17\n" +
-	"\acity_id\x18\x03 \x01(\tR\x06cityId\"\"\n" +
+	"\acity_id\x18\x03 \x01(\tR\x06cityId\x12\x1b\n" +
+	"\tcity_name\x18\x04 \x01(\tR\bcityName\"\"\n" +
 	"\x10GetSchoolRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\";\n" +
 	"\x11GetSchoolResponse\x12&\n" +

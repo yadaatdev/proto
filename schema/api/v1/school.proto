@@ -8,6 +8,7 @@ message School {
   string id = 1;
   string name = 2;
   string city_id = 3;
+  string city_name = 4;
 }
 
 message GetSchoolRequest {

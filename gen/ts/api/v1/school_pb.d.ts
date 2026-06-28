@@ -29,6 +29,11 @@ export declare type School = Message<"api.v1.School"> & {
    * @generated from field: string city_id = 3;
    */
   cityId: string;
+
+  /**
+   * @generated from field: string city_name = 4;
+   */
+  cityName: string;
 };
 
 /**
