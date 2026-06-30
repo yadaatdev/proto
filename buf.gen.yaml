@@ -1,6 +1,11 @@
 version: v2
 managed:
   enabled: true
+  # Don't rewrite googleapis go_package: keep its upstream genproto import path
+  # so generated code references google.golang.org/genproto, not a path we never
+  # generate under gen/go/google/api.
+  disable:
+    - module: buf.build/googleapis/googleapis
   override:
     - file_option: go_package_prefix
       value: github.com/yadaatdev/proto/gen/go
