@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package yadaat.v1;
+
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "google/protobuf/field_mask.proto";
+
+message School {
+  option (google.api.resource) = {
+    type: "yadaat.com/School"
+    pattern: "cities/{city}/schools/{school}"
+  };
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
+  string display_name = 2;
+
+  // The display name of the parent city, populated by the server.
+  string city_display_name = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+message GetSchoolRequest {
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {type: "yadaat.com/School"}
+  ];
+}
+
+message ListSchoolsRequest {
+  // The parent city whose schools are listed.
+  // Format: cities/{city}
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {type: "yadaat.com/City"}
+  ];
+
+  // The maximum number of schools to return. The service may return fewer than
+  // this value.
+  // If unspecified, at most 50 schools will be returned.
+  // The maximum value is 1000; values above 1000 will be coerced to 1000.
+  int32 page_size = 2;
+
+  // A page token, received from a previous `ListSchools` call.
+  // Provide this to retrieve the subsequent page.
+  //
+  // When paginating, all other parameters provided to `ListSchools` must match
+  // the call that provided the page token.
+  string page_token = 3;
+}
+
+message ListSchoolsResponse {
+  // The schools.
+  repeated School schools = 1;
+
+  // A token, which can be sent as `page_token` to retrieve the next page.
+  // If this field is omitted, there are no subsequent pages.
+  string next_page_token = 2;
+}
+
+message CreateSchoolRequest {
+  // The parent city in which to create the school.
+  // Format: cities/{city}
+  string parent = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {type: "yadaat.com/City"}
+  ];
+
+  // The school to create.
+  School school = 2 [(google.api.field_behavior) = REQUIRED];
+}
+
+message UpdateSchoolRequest {
+  // The school to update.
+  //
+  // The school's `name` field is used to identify the school to update.
+  // Format: cities/{city}/schools/{school}
+  School school = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // The list of fields to update.
+  google.protobuf.FieldMask update_mask = 2;
+}
+
+message DeleteSchoolRequest {
+  // The name of the school to delete.
+  // Format: cities/{city}/schools/{school}
+  string name = 1 [
+    (google.api.field_behavior) = REQUIRED,
+    (google.api.resource_reference) = {type: "yadaat.com/School"}
+  ];
+}

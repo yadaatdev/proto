@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package yadaat.v1;
+
+import "google/api/annotations.proto";
+import "google/api/client.proto";
+import "google/api/field_behavior.proto";
+import "google/api/resource.proto";
+import "google/protobuf/empty.proto";
+import "yadaat/v1/city.proto";
+import "yadaat/v1/school.proto";
+
+service YadaatService {
+  rpc GetCity(GetCityRequest) returns (City) {
+    option (google.api.http) = {get: "/v1/{name=cities/*}"};
+    option (google.api.method_signature) = "name";
+  }
+
+  rpc ListCities(ListCitiesRequest) returns (ListCitiesResponse) {
+    option (google.api.http) = {get: "/v1/cities"};
+  }
+
+  rpc CreateCity(CreateCityRequest) returns (City) {
+    option (google.api.http) = {
+      post: "/v1/cities"
+      body: "city"
+    };
+    option (google.api.method_signature) = "city";
+  }
+
+  rpc UpdateCity(UpdateCityRequest) returns (City) {
+    option (google.api.http) = {
+      patch: "/v1/{city.name=cities/*}"
+      body: "city"
+    };
+    option (google.api.method_signature) = "city,update_mask";
+  }
+
+  rpc DeleteCity(DeleteCityRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=cities/*}"};
+    option (google.api.method_signature) = "name";
+  }
+
+  rpc GetSchool(GetSchoolRequest) returns (School) {
+    option (google.api.http) = {get: "/v1/{name=cities/*/schools/*}"};
+    option (google.api.method_signature) = "name";
+  }
+
+  rpc ListSchools(ListSchoolsRequest) returns (ListSchoolsResponse) {
+    option (google.api.http) = {get: "/v1/{parent=cities/*}/schools"};
+    option (google.api.method_signature) = "parent";
+  }
+
+  rpc CreateSchool(CreateSchoolRequest) returns (School) {
+    option (google.api.http) = {
+      post: "/v1/{parent=cities/*}/schools"
+      body: "school"
+    };
+    option (google.api.method_signature) = "parent,school";
+  }
+
+  rpc UpdateSchool(UpdateSchoolRequest) returns (School) {
+    option (google.api.http) = {
+      patch: "/v1/{school.name=cities/*/schools/*}"
+      body: "school"
+    };
+    option (google.api.method_signature) = "school,update_mask";
+  }
+
+  rpc DeleteSchool(DeleteSchoolRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=cities/*/schools/*}"};
+    option (google.api.method_signature) = "name";
+  }
+}

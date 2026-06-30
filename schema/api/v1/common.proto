@@ -1,7 +1,0 @@
-syntax = "proto3";
-package api.v1;
-
-message Option {
-  string id = 1;
-  string value = 2;
-}
