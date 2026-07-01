@@ -6,6 +6,7 @@ import type { GenFile, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { CitySchema, CreateCityRequestSchema, DeleteCityRequestSchema, GetCityRequestSchema, ListCitiesRequestSchema, ListCitiesResponseSchema, UpdateCityRequestSchema } from "./city_pb";
 import type { EmptySchema } from "@bufbuild/protobuf/wkt";
 import type { CreateSchoolRequestSchema, DeleteSchoolRequestSchema, GetSchoolRequestSchema, ListSchoolsRequestSchema, ListSchoolsResponseSchema, SchoolSchema, UpdateSchoolRequestSchema } from "./school_pb";
+import type { CreateSubjectRequestSchema, DeleteSubjectRequestSchema, GetSubjectRequestSchema, ListSubjectsRequestSchema, ListSubjectsResponseSchema, SubjectSchema, UpdateSubjectRequestSchema } from "./subject_pb";
 
 /**
  * Describes the file yadaat/v1/yadaat.proto.
@@ -94,6 +95,46 @@ export declare const YadaatService: GenService<{
   deleteSchool: {
     methodKind: "unary";
     input: typeof DeleteSchoolRequestSchema;
+    output: typeof EmptySchema;
+  },
+  /**
+   * @generated from rpc yadaat.v1.YadaatService.GetSubject
+   */
+  getSubject: {
+    methodKind: "unary";
+    input: typeof GetSubjectRequestSchema;
+    output: typeof SubjectSchema;
+  },
+  /**
+   * @generated from rpc yadaat.v1.YadaatService.ListSubjects
+   */
+  listSubjects: {
+    methodKind: "unary";
+    input: typeof ListSubjectsRequestSchema;
+    output: typeof ListSubjectsResponseSchema;
+  },
+  /**
+   * @generated from rpc yadaat.v1.YadaatService.CreateSubject
+   */
+  createSubject: {
+    methodKind: "unary";
+    input: typeof CreateSubjectRequestSchema;
+    output: typeof SubjectSchema;
+  },
+  /**
+   * @generated from rpc yadaat.v1.YadaatService.UpdateSubject
+   */
+  updateSubject: {
+    methodKind: "unary";
+    input: typeof UpdateSubjectRequestSchema;
+    output: typeof SubjectSchema;
+  },
+  /**
+   * @generated from rpc yadaat.v1.YadaatService.DeleteSubject
+   */
+  deleteSubject: {
+    methodKind: "unary";
+    input: typeof DeleteSubjectRequestSchema;
     output: typeof EmptySchema;
   },
 }>;

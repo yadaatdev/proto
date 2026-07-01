@@ -62,6 +62,21 @@ const (
 	// YadaatServiceDeleteSchoolProcedure is the fully-qualified name of the YadaatService's
 	// DeleteSchool RPC.
 	YadaatServiceDeleteSchoolProcedure = "/yadaat.v1.YadaatService/DeleteSchool"
+	// YadaatServiceGetSubjectProcedure is the fully-qualified name of the YadaatService's GetSubject
+	// RPC.
+	YadaatServiceGetSubjectProcedure = "/yadaat.v1.YadaatService/GetSubject"
+	// YadaatServiceListSubjectsProcedure is the fully-qualified name of the YadaatService's
+	// ListSubjects RPC.
+	YadaatServiceListSubjectsProcedure = "/yadaat.v1.YadaatService/ListSubjects"
+	// YadaatServiceCreateSubjectProcedure is the fully-qualified name of the YadaatService's
+	// CreateSubject RPC.
+	YadaatServiceCreateSubjectProcedure = "/yadaat.v1.YadaatService/CreateSubject"
+	// YadaatServiceUpdateSubjectProcedure is the fully-qualified name of the YadaatService's
+	// UpdateSubject RPC.
+	YadaatServiceUpdateSubjectProcedure = "/yadaat.v1.YadaatService/UpdateSubject"
+	// YadaatServiceDeleteSubjectProcedure is the fully-qualified name of the YadaatService's
+	// DeleteSubject RPC.
+	YadaatServiceDeleteSubjectProcedure = "/yadaat.v1.YadaatService/DeleteSubject"
 )
 
 // YadaatServiceClient is a client for the yadaat.v1.YadaatService service.
@@ -76,6 +91,11 @@ type YadaatServiceClient interface {
 	CreateSchool(context.Context, *v1.CreateSchoolRequest) (*v1.School, error)
 	UpdateSchool(context.Context, *v1.UpdateSchoolRequest) (*v1.School, error)
 	DeleteSchool(context.Context, *v1.DeleteSchoolRequest) (*emptypb.Empty, error)
+	GetSubject(context.Context, *v1.GetSubjectRequest) (*v1.Subject, error)
+	ListSubjects(context.Context, *v1.ListSubjectsRequest) (*v1.ListSubjectsResponse, error)
+	CreateSubject(context.Context, *v1.CreateSubjectRequest) (*v1.Subject, error)
+	UpdateSubject(context.Context, *v1.UpdateSubjectRequest) (*v1.Subject, error)
+	DeleteSubject(context.Context, *v1.DeleteSubjectRequest) (*emptypb.Empty, error)
 }
 
 // NewYadaatServiceClient constructs a client for the yadaat.v1.YadaatService service. By default,
@@ -149,21 +169,56 @@ func NewYadaatServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(yadaatServiceMethods.ByName("DeleteSchool")),
 			connect.WithClientOptions(opts...),
 		),
+		getSubject: connect.NewClient[v1.GetSubjectRequest, v1.Subject](
+			httpClient,
+			baseURL+YadaatServiceGetSubjectProcedure,
+			connect.WithSchema(yadaatServiceMethods.ByName("GetSubject")),
+			connect.WithClientOptions(opts...),
+		),
+		listSubjects: connect.NewClient[v1.ListSubjectsRequest, v1.ListSubjectsResponse](
+			httpClient,
+			baseURL+YadaatServiceListSubjectsProcedure,
+			connect.WithSchema(yadaatServiceMethods.ByName("ListSubjects")),
+			connect.WithClientOptions(opts...),
+		),
+		createSubject: connect.NewClient[v1.CreateSubjectRequest, v1.Subject](
+			httpClient,
+			baseURL+YadaatServiceCreateSubjectProcedure,
+			connect.WithSchema(yadaatServiceMethods.ByName("CreateSubject")),
+			connect.WithClientOptions(opts...),
+		),
+		updateSubject: connect.NewClient[v1.UpdateSubjectRequest, v1.Subject](
+			httpClient,
+			baseURL+YadaatServiceUpdateSubjectProcedure,
+			connect.WithSchema(yadaatServiceMethods.ByName("UpdateSubject")),
+			connect.WithClientOptions(opts...),
+		),
+		deleteSubject: connect.NewClient[v1.DeleteSubjectRequest, emptypb.Empty](
+			httpClient,
+			baseURL+YadaatServiceDeleteSubjectProcedure,
+			connect.WithSchema(yadaatServiceMethods.ByName("DeleteSubject")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
 // yadaatServiceClient implements YadaatServiceClient.
 type yadaatServiceClient struct {
-	getCity      *connect.Client[v1.GetCityRequest, v1.City]
-	listCities   *connect.Client[v1.ListCitiesRequest, v1.ListCitiesResponse]
-	createCity   *connect.Client[v1.CreateCityRequest, v1.City]
-	updateCity   *connect.Client[v1.UpdateCityRequest, v1.City]
-	deleteCity   *connect.Client[v1.DeleteCityRequest, emptypb.Empty]
-	getSchool    *connect.Client[v1.GetSchoolRequest, v1.School]
-	listSchools  *connect.Client[v1.ListSchoolsRequest, v1.ListSchoolsResponse]
-	createSchool *connect.Client[v1.CreateSchoolRequest, v1.School]
-	updateSchool *connect.Client[v1.UpdateSchoolRequest, v1.School]
-	deleteSchool *connect.Client[v1.DeleteSchoolRequest, emptypb.Empty]
+	getCity       *connect.Client[v1.GetCityRequest, v1.City]
+	listCities    *connect.Client[v1.ListCitiesRequest, v1.ListCitiesResponse]
+	createCity    *connect.Client[v1.CreateCityRequest, v1.City]
+	updateCity    *connect.Client[v1.UpdateCityRequest, v1.City]
+	deleteCity    *connect.Client[v1.DeleteCityRequest, emptypb.Empty]
+	getSchool     *connect.Client[v1.GetSchoolRequest, v1.School]
+	listSchools   *connect.Client[v1.ListSchoolsRequest, v1.ListSchoolsResponse]
+	createSchool  *connect.Client[v1.CreateSchoolRequest, v1.School]
+	updateSchool  *connect.Client[v1.UpdateSchoolRequest, v1.School]
+	deleteSchool  *connect.Client[v1.DeleteSchoolRequest, emptypb.Empty]
+	getSubject    *connect.Client[v1.GetSubjectRequest, v1.Subject]
+	listSubjects  *connect.Client[v1.ListSubjectsRequest, v1.ListSubjectsResponse]
+	createSubject *connect.Client[v1.CreateSubjectRequest, v1.Subject]
+	updateSubject *connect.Client[v1.UpdateSubjectRequest, v1.Subject]
+	deleteSubject *connect.Client[v1.DeleteSubjectRequest, emptypb.Empty]
 }
 
 // GetCity calls yadaat.v1.YadaatService.GetCity.
@@ -256,6 +311,51 @@ func (c *yadaatServiceClient) DeleteSchool(ctx context.Context, req *v1.DeleteSc
 	return nil, err
 }
 
+// GetSubject calls yadaat.v1.YadaatService.GetSubject.
+func (c *yadaatServiceClient) GetSubject(ctx context.Context, req *v1.GetSubjectRequest) (*v1.Subject, error) {
+	response, err := c.getSubject.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
+}
+
+// ListSubjects calls yadaat.v1.YadaatService.ListSubjects.
+func (c *yadaatServiceClient) ListSubjects(ctx context.Context, req *v1.ListSubjectsRequest) (*v1.ListSubjectsResponse, error) {
+	response, err := c.listSubjects.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
+}
+
+// CreateSubject calls yadaat.v1.YadaatService.CreateSubject.
+func (c *yadaatServiceClient) CreateSubject(ctx context.Context, req *v1.CreateSubjectRequest) (*v1.Subject, error) {
+	response, err := c.createSubject.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
+}
+
+// UpdateSubject calls yadaat.v1.YadaatService.UpdateSubject.
+func (c *yadaatServiceClient) UpdateSubject(ctx context.Context, req *v1.UpdateSubjectRequest) (*v1.Subject, error) {
+	response, err := c.updateSubject.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
+}
+
+// DeleteSubject calls yadaat.v1.YadaatService.DeleteSubject.
+func (c *yadaatServiceClient) DeleteSubject(ctx context.Context, req *v1.DeleteSubjectRequest) (*emptypb.Empty, error) {
+	response, err := c.deleteSubject.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
+}
+
 // YadaatServiceHandler is an implementation of the yadaat.v1.YadaatService service.
 type YadaatServiceHandler interface {
 	GetCity(context.Context, *v1.GetCityRequest) (*v1.City, error)
@@ -268,6 +368,11 @@ type YadaatServiceHandler interface {
 	CreateSchool(context.Context, *v1.CreateSchoolRequest) (*v1.School, error)
 	UpdateSchool(context.Context, *v1.UpdateSchoolRequest) (*v1.School, error)
 	DeleteSchool(context.Context, *v1.DeleteSchoolRequest) (*emptypb.Empty, error)
+	GetSubject(context.Context, *v1.GetSubjectRequest) (*v1.Subject, error)
+	ListSubjects(context.Context, *v1.ListSubjectsRequest) (*v1.ListSubjectsResponse, error)
+	CreateSubject(context.Context, *v1.CreateSubjectRequest) (*v1.Subject, error)
+	UpdateSubject(context.Context, *v1.UpdateSubjectRequest) (*v1.Subject, error)
+	DeleteSubject(context.Context, *v1.DeleteSubjectRequest) (*emptypb.Empty, error)
 }
 
 // NewYadaatServiceHandler builds an HTTP handler from the service implementation. It returns the
@@ -337,6 +442,36 @@ func NewYadaatServiceHandler(svc YadaatServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(yadaatServiceMethods.ByName("DeleteSchool")),
 		connect.WithHandlerOptions(opts...),
 	)
+	yadaatServiceGetSubjectHandler := connect.NewUnaryHandlerSimple(
+		YadaatServiceGetSubjectProcedure,
+		svc.GetSubject,
+		connect.WithSchema(yadaatServiceMethods.ByName("GetSubject")),
+		connect.WithHandlerOptions(opts...),
+	)
+	yadaatServiceListSubjectsHandler := connect.NewUnaryHandlerSimple(
+		YadaatServiceListSubjectsProcedure,
+		svc.ListSubjects,
+		connect.WithSchema(yadaatServiceMethods.ByName("ListSubjects")),
+		connect.WithHandlerOptions(opts...),
+	)
+	yadaatServiceCreateSubjectHandler := connect.NewUnaryHandlerSimple(
+		YadaatServiceCreateSubjectProcedure,
+		svc.CreateSubject,
+		connect.WithSchema(yadaatServiceMethods.ByName("CreateSubject")),
+		connect.WithHandlerOptions(opts...),
+	)
+	yadaatServiceUpdateSubjectHandler := connect.NewUnaryHandlerSimple(
+		YadaatServiceUpdateSubjectProcedure,
+		svc.UpdateSubject,
+		connect.WithSchema(yadaatServiceMethods.ByName("UpdateSubject")),
+		connect.WithHandlerOptions(opts...),
+	)
+	yadaatServiceDeleteSubjectHandler := connect.NewUnaryHandlerSimple(
+		YadaatServiceDeleteSubjectProcedure,
+		svc.DeleteSubject,
+		connect.WithSchema(yadaatServiceMethods.ByName("DeleteSubject")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/yadaat.v1.YadaatService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case YadaatServiceGetCityProcedure:
@@ -359,6 +494,16 @@ func NewYadaatServiceHandler(svc YadaatServiceHandler, opts ...connect.HandlerOp
 			yadaatServiceUpdateSchoolHandler.ServeHTTP(w, r)
 		case YadaatServiceDeleteSchoolProcedure:
 			yadaatServiceDeleteSchoolHandler.ServeHTTP(w, r)
+		case YadaatServiceGetSubjectProcedure:
+			yadaatServiceGetSubjectHandler.ServeHTTP(w, r)
+		case YadaatServiceListSubjectsProcedure:
+			yadaatServiceListSubjectsHandler.ServeHTTP(w, r)
+		case YadaatServiceCreateSubjectProcedure:
+			yadaatServiceCreateSubjectHandler.ServeHTTP(w, r)
+		case YadaatServiceUpdateSubjectProcedure:
+			yadaatServiceUpdateSubjectHandler.ServeHTTP(w, r)
+		case YadaatServiceDeleteSubjectProcedure:
+			yadaatServiceDeleteSubjectHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -406,4 +551,24 @@ func (UnimplementedYadaatServiceHandler) UpdateSchool(context.Context, *v1.Updat
 
 func (UnimplementedYadaatServiceHandler) DeleteSchool(context.Context, *v1.DeleteSchoolRequest) (*emptypb.Empty, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("yadaat.v1.YadaatService.DeleteSchool is not implemented"))
+}
+
+func (UnimplementedYadaatServiceHandler) GetSubject(context.Context, *v1.GetSubjectRequest) (*v1.Subject, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("yadaat.v1.YadaatService.GetSubject is not implemented"))
+}
+
+func (UnimplementedYadaatServiceHandler) ListSubjects(context.Context, *v1.ListSubjectsRequest) (*v1.ListSubjectsResponse, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("yadaat.v1.YadaatService.ListSubjects is not implemented"))
+}
+
+func (UnimplementedYadaatServiceHandler) CreateSubject(context.Context, *v1.CreateSubjectRequest) (*v1.Subject, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("yadaat.v1.YadaatService.CreateSubject is not implemented"))
+}
+
+func (UnimplementedYadaatServiceHandler) UpdateSubject(context.Context, *v1.UpdateSubjectRequest) (*v1.Subject, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("yadaat.v1.YadaatService.UpdateSubject is not implemented"))
+}
+
+func (UnimplementedYadaatServiceHandler) DeleteSubject(context.Context, *v1.DeleteSubjectRequest) (*emptypb.Empty, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("yadaat.v1.YadaatService.DeleteSubject is not implemented"))
 }

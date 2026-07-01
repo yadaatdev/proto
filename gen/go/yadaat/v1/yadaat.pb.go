@@ -26,7 +26,7 @@ var File_yadaat_v1_yadaat_proto protoreflect.FileDescriptor
 
 const file_yadaat_v1_yadaat_proto_rawDesc = "" +
 	"\n" +
-	"\x16yadaat/v1/yadaat.proto\x12\tyadaat.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x14yadaat/v1/city.proto\x1a\x16yadaat/v1/school.proto2\xf8\b\n" +
+	"\x16yadaat/v1/yadaat.proto\x12\tyadaat.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x14yadaat/v1/city.proto\x1a\x16yadaat/v1/school.proto\x1a\x17yadaat/v1/subject.proto2\xb1\r\n" +
 	"\rYadaatService\x12Y\n" +
 	"\aGetCity\x12\x19.yadaat.v1.GetCityRequest\x1a\x0f.yadaat.v1.City\"\"\xdaA\x04name\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/{name=cities/*}\x12]\n" +
 	"\n" +
@@ -43,26 +43,39 @@ const file_yadaat_v1_yadaat_proto_rawDesc = "" +
 	"\vListSchools\x12\x1d.yadaat.v1.ListSchoolsRequest\x1a\x1e.yadaat.v1.ListSchoolsResponse\".\xdaA\x06parent\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/{parent=cities/*}/schools\x12\x80\x01\n" +
 	"\fCreateSchool\x12\x1e.yadaat.v1.CreateSchoolRequest\x1a\x11.yadaat.v1.School\"=\xdaA\rparent,school\x82\xd3\xe4\x93\x02':\x06school\"\x1d/v1/{parent=cities/*}/schools\x12\x8c\x01\n" +
 	"\fUpdateSchool\x12\x1e.yadaat.v1.UpdateSchoolRequest\x1a\x11.yadaat.v1.School\"I\xdaA\x12school,update_mask\x82\xd3\xe4\x93\x02.:\x06school2$/v1/{school.name=cities/*/schools/*}\x12t\n" +
-	"\fDeleteSchool\x12\x1e.yadaat.v1.DeleteSchoolRequest\x1a\x16.google.protobuf.Empty\",\xdaA\x04name\x82\xd3\xe4\x93\x02\x1f*\x1d/v1/{name=cities/*/schools/*}B\x97\x01\n" +
+	"\fDeleteSchool\x12\x1e.yadaat.v1.DeleteSchoolRequest\x1a\x16.google.protobuf.Empty\",\xdaA\x04name\x82\xd3\xe4\x93\x02\x1f*\x1d/v1/{name=cities/*/schools/*}\x12d\n" +
+	"\n" +
+	"GetSubject\x12\x1c.yadaat.v1.GetSubjectRequest\x1a\x12.yadaat.v1.Subject\"$\xdaA\x04name\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/{name=subjects/*}\x12e\n" +
+	"\fListSubjects\x12\x1e.yadaat.v1.ListSubjectsRequest\x1a\x1f.yadaat.v1.ListSubjectsResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\f/v1/subjects\x12m\n" +
+	"\rCreateSubject\x12\x1f.yadaat.v1.CreateSubjectRequest\x1a\x12.yadaat.v1.Subject\"'\xdaA\asubject\x82\xd3\xe4\x93\x02\x17:\asubject\"\f/v1/subjects\x12\x8a\x01\n" +
+	"\rUpdateSubject\x12\x1f.yadaat.v1.UpdateSubjectRequest\x1a\x12.yadaat.v1.Subject\"D\xdaA\x13subject,update_mask\x82\xd3\xe4\x93\x02(:\asubject2\x1d/v1/{subject.name=subjects/*}\x12n\n" +
+	"\rDeleteSubject\x12\x1f.yadaat.v1.DeleteSubjectRequest\x1a\x16.google.protobuf.Empty\"$\xdaA\x04name\x82\xd3\xe4\x93\x02\x17*\x15/v1/{name=subjects/*}B\x97\x01\n" +
 	"\rcom.yadaat.v1B\vYadaatProtoP\x01Z4github.com/yadaatdev/proto/gen/go/yadaat/v1;yadaatv1\xa2\x02\x03YXX\xaa\x02\tYadaat.V1\xca\x02\tYadaat\\V1\xe2\x02\x15Yadaat\\V1\\GPBMetadata\xea\x02\n" +
 	"Yadaat::V1b\x06proto3"
 
 var file_yadaat_v1_yadaat_proto_goTypes = []any{
-	(*GetCityRequest)(nil),      // 0: yadaat.v1.GetCityRequest
-	(*ListCitiesRequest)(nil),   // 1: yadaat.v1.ListCitiesRequest
-	(*CreateCityRequest)(nil),   // 2: yadaat.v1.CreateCityRequest
-	(*UpdateCityRequest)(nil),   // 3: yadaat.v1.UpdateCityRequest
-	(*DeleteCityRequest)(nil),   // 4: yadaat.v1.DeleteCityRequest
-	(*GetSchoolRequest)(nil),    // 5: yadaat.v1.GetSchoolRequest
-	(*ListSchoolsRequest)(nil),  // 6: yadaat.v1.ListSchoolsRequest
-	(*CreateSchoolRequest)(nil), // 7: yadaat.v1.CreateSchoolRequest
-	(*UpdateSchoolRequest)(nil), // 8: yadaat.v1.UpdateSchoolRequest
-	(*DeleteSchoolRequest)(nil), // 9: yadaat.v1.DeleteSchoolRequest
-	(*City)(nil),                // 10: yadaat.v1.City
-	(*ListCitiesResponse)(nil),  // 11: yadaat.v1.ListCitiesResponse
-	(*emptypb.Empty)(nil),       // 12: google.protobuf.Empty
-	(*School)(nil),              // 13: yadaat.v1.School
-	(*ListSchoolsResponse)(nil), // 14: yadaat.v1.ListSchoolsResponse
+	(*GetCityRequest)(nil),       // 0: yadaat.v1.GetCityRequest
+	(*ListCitiesRequest)(nil),    // 1: yadaat.v1.ListCitiesRequest
+	(*CreateCityRequest)(nil),    // 2: yadaat.v1.CreateCityRequest
+	(*UpdateCityRequest)(nil),    // 3: yadaat.v1.UpdateCityRequest
+	(*DeleteCityRequest)(nil),    // 4: yadaat.v1.DeleteCityRequest
+	(*GetSchoolRequest)(nil),     // 5: yadaat.v1.GetSchoolRequest
+	(*ListSchoolsRequest)(nil),   // 6: yadaat.v1.ListSchoolsRequest
+	(*CreateSchoolRequest)(nil),  // 7: yadaat.v1.CreateSchoolRequest
+	(*UpdateSchoolRequest)(nil),  // 8: yadaat.v1.UpdateSchoolRequest
+	(*DeleteSchoolRequest)(nil),  // 9: yadaat.v1.DeleteSchoolRequest
+	(*GetSubjectRequest)(nil),    // 10: yadaat.v1.GetSubjectRequest
+	(*ListSubjectsRequest)(nil),  // 11: yadaat.v1.ListSubjectsRequest
+	(*CreateSubjectRequest)(nil), // 12: yadaat.v1.CreateSubjectRequest
+	(*UpdateSubjectRequest)(nil), // 13: yadaat.v1.UpdateSubjectRequest
+	(*DeleteSubjectRequest)(nil), // 14: yadaat.v1.DeleteSubjectRequest
+	(*City)(nil),                 // 15: yadaat.v1.City
+	(*ListCitiesResponse)(nil),   // 16: yadaat.v1.ListCitiesResponse
+	(*emptypb.Empty)(nil),        // 17: google.protobuf.Empty
+	(*School)(nil),               // 18: yadaat.v1.School
+	(*ListSchoolsResponse)(nil),  // 19: yadaat.v1.ListSchoolsResponse
+	(*Subject)(nil),              // 20: yadaat.v1.Subject
+	(*ListSubjectsResponse)(nil), // 21: yadaat.v1.ListSubjectsResponse
 }
 var file_yadaat_v1_yadaat_proto_depIdxs = []int32{
 	0,  // 0: yadaat.v1.YadaatService.GetCity:input_type -> yadaat.v1.GetCityRequest
@@ -75,18 +88,28 @@ var file_yadaat_v1_yadaat_proto_depIdxs = []int32{
 	7,  // 7: yadaat.v1.YadaatService.CreateSchool:input_type -> yadaat.v1.CreateSchoolRequest
 	8,  // 8: yadaat.v1.YadaatService.UpdateSchool:input_type -> yadaat.v1.UpdateSchoolRequest
 	9,  // 9: yadaat.v1.YadaatService.DeleteSchool:input_type -> yadaat.v1.DeleteSchoolRequest
-	10, // 10: yadaat.v1.YadaatService.GetCity:output_type -> yadaat.v1.City
-	11, // 11: yadaat.v1.YadaatService.ListCities:output_type -> yadaat.v1.ListCitiesResponse
-	10, // 12: yadaat.v1.YadaatService.CreateCity:output_type -> yadaat.v1.City
-	10, // 13: yadaat.v1.YadaatService.UpdateCity:output_type -> yadaat.v1.City
-	12, // 14: yadaat.v1.YadaatService.DeleteCity:output_type -> google.protobuf.Empty
-	13, // 15: yadaat.v1.YadaatService.GetSchool:output_type -> yadaat.v1.School
-	14, // 16: yadaat.v1.YadaatService.ListSchools:output_type -> yadaat.v1.ListSchoolsResponse
-	13, // 17: yadaat.v1.YadaatService.CreateSchool:output_type -> yadaat.v1.School
-	13, // 18: yadaat.v1.YadaatService.UpdateSchool:output_type -> yadaat.v1.School
-	12, // 19: yadaat.v1.YadaatService.DeleteSchool:output_type -> google.protobuf.Empty
-	10, // [10:20] is the sub-list for method output_type
-	0,  // [0:10] is the sub-list for method input_type
+	10, // 10: yadaat.v1.YadaatService.GetSubject:input_type -> yadaat.v1.GetSubjectRequest
+	11, // 11: yadaat.v1.YadaatService.ListSubjects:input_type -> yadaat.v1.ListSubjectsRequest
+	12, // 12: yadaat.v1.YadaatService.CreateSubject:input_type -> yadaat.v1.CreateSubjectRequest
+	13, // 13: yadaat.v1.YadaatService.UpdateSubject:input_type -> yadaat.v1.UpdateSubjectRequest
+	14, // 14: yadaat.v1.YadaatService.DeleteSubject:input_type -> yadaat.v1.DeleteSubjectRequest
+	15, // 15: yadaat.v1.YadaatService.GetCity:output_type -> yadaat.v1.City
+	16, // 16: yadaat.v1.YadaatService.ListCities:output_type -> yadaat.v1.ListCitiesResponse
+	15, // 17: yadaat.v1.YadaatService.CreateCity:output_type -> yadaat.v1.City
+	15, // 18: yadaat.v1.YadaatService.UpdateCity:output_type -> yadaat.v1.City
+	17, // 19: yadaat.v1.YadaatService.DeleteCity:output_type -> google.protobuf.Empty
+	18, // 20: yadaat.v1.YadaatService.GetSchool:output_type -> yadaat.v1.School
+	19, // 21: yadaat.v1.YadaatService.ListSchools:output_type -> yadaat.v1.ListSchoolsResponse
+	18, // 22: yadaat.v1.YadaatService.CreateSchool:output_type -> yadaat.v1.School
+	18, // 23: yadaat.v1.YadaatService.UpdateSchool:output_type -> yadaat.v1.School
+	17, // 24: yadaat.v1.YadaatService.DeleteSchool:output_type -> google.protobuf.Empty
+	20, // 25: yadaat.v1.YadaatService.GetSubject:output_type -> yadaat.v1.Subject
+	21, // 26: yadaat.v1.YadaatService.ListSubjects:output_type -> yadaat.v1.ListSubjectsResponse
+	20, // 27: yadaat.v1.YadaatService.CreateSubject:output_type -> yadaat.v1.Subject
+	20, // 28: yadaat.v1.YadaatService.UpdateSubject:output_type -> yadaat.v1.Subject
+	17, // 29: yadaat.v1.YadaatService.DeleteSubject:output_type -> google.protobuf.Empty
+	15, // [15:30] is the sub-list for method output_type
+	0,  // [0:15] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name
@@ -99,6 +122,7 @@ func file_yadaat_v1_yadaat_proto_init() {
 	}
 	file_yadaat_v1_city_proto_init()
 	file_yadaat_v1_school_proto_init()
+	file_yadaat_v1_subject_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

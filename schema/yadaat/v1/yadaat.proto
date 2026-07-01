@@ -9,6 +9,7 @@ import "google/api/resource.proto";
 import "google/protobuf/empty.proto";
 import "yadaat/v1/city.proto";
 import "yadaat/v1/school.proto";
+import "yadaat/v1/subject.proto";
 
 service YadaatService {
   rpc GetCity(GetCityRequest) returns (City) {
@@ -69,6 +70,36 @@ service YadaatService {
 
   rpc DeleteSchool(DeleteSchoolRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {delete: "/v1/{name=cities/*/schools/*}"};
+    option (google.api.method_signature) = "name";
+  }
+
+  rpc GetSubject(GetSubjectRequest) returns (Subject) {
+    option (google.api.http) = {get: "/v1/{name=subjects/*}"};
+    option (google.api.method_signature) = "name";
+  }
+
+  rpc ListSubjects(ListSubjectsRequest) returns (ListSubjectsResponse) {
+    option (google.api.http) = {get: "/v1/subjects"};
+  }
+
+  rpc CreateSubject(CreateSubjectRequest) returns (Subject) {
+    option (google.api.http) = {
+      post: "/v1/subjects"
+      body: "subject"
+    };
+    option (google.api.method_signature) = "subject";
+  }
+
+  rpc UpdateSubject(UpdateSubjectRequest) returns (Subject) {
+    option (google.api.http) = {
+      patch: "/v1/{subject.name=subjects/*}"
+      body: "subject"
+    };
+    option (google.api.method_signature) = "subject,update_mask";
+  }
+
+  rpc DeleteSubject(DeleteSubjectRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {delete: "/v1/{name=subjects/*}"};
     option (google.api.method_signature) = "name";
   }
 }
