@@ -72,6 +72,14 @@ export declare type ListCitiesRequest = Message<"yadaat.v1.ListCitiesRequest"> &
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
+
+  /**
+   * An AIP-160 filter expression. Supported field: `display_name`.
+   * Example: `display_name:"tel"`.
+   *
+   * @generated from field: string filter = 3;
+   */
+  filter: string;
 };
 
 /**

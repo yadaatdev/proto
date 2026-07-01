@@ -131,7 +131,10 @@ type ListCitiesRequest struct {
 	//
 	// When paginating, all other parameters provided to `ListCities` must match
 	// the call that provided the page token.
-	PageToken     string `protobuf:"bytes,2,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
+	PageToken string `protobuf:"bytes,2,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
+	// An AIP-160 filter expression. Supported field: `display_name`.
+	// Example: `display_name:"tel"`.
+	Filter        string `protobuf:"bytes,3,opt,name=filter,proto3" json:"filter,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -176,6 +179,13 @@ func (x *ListCitiesRequest) GetPageSize() int32 {
 func (x *ListCitiesRequest) GetPageToken() string {
 	if x != nil {
 		return x.PageToken
+	}
+	return ""
+}
+
+func (x *ListCitiesRequest) GetFilter() string {
+	if x != nil {
+		return x.Filter
 	}
 	return ""
 }
@@ -394,11 +404,12 @@ const file_yadaat_v1_city_proto_rawDesc = "" +
 	"\x0fyadaat.com/City\x12\rcities/{city}\"=\n" +
 	"\x0eGetCityRequest\x12+\n" +
 	"\x04name\x18\x01 \x01(\tB\x17\xe0A\x02\xfaA\x11\n" +
-	"\x0fyadaat.com/CityR\x04name\"O\n" +
+	"\x0fyadaat.com/CityR\x04name\"g\n" +
 	"\x11ListCitiesRequest\x12\x1b\n" +
 	"\tpage_size\x18\x01 \x01(\x05R\bpageSize\x12\x1d\n" +
 	"\n" +
-	"page_token\x18\x02 \x01(\tR\tpageToken\"e\n" +
+	"page_token\x18\x02 \x01(\tR\tpageToken\x12\x16\n" +
+	"\x06filter\x18\x03 \x01(\tR\x06filter\"e\n" +
 	"\x12ListCitiesResponse\x12'\n" +
 	"\x06cities\x18\x01 \x03(\v2\x0f.yadaat.v1.CityR\x06cities\x12&\n" +
 	"\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"=\n" +

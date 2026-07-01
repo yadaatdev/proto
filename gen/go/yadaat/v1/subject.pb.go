@@ -131,7 +131,10 @@ type ListSubjectsRequest struct {
 	//
 	// When paginating, all other parameters provided to `ListSubjects` must match
 	// the call that provided the page token.
-	PageToken     string `protobuf:"bytes,2,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
+	PageToken string `protobuf:"bytes,2,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
+	// An AIP-160 filter expression. Supported field: `display_name`.
+	// Example: `display_name:"math"`.
+	Filter        string `protobuf:"bytes,3,opt,name=filter,proto3" json:"filter,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -176,6 +179,13 @@ func (x *ListSubjectsRequest) GetPageSize() int32 {
 func (x *ListSubjectsRequest) GetPageToken() string {
 	if x != nil {
 		return x.PageToken
+	}
+	return ""
+}
+
+func (x *ListSubjectsRequest) GetFilter() string {
+	if x != nil {
+		return x.Filter
 	}
 	return ""
 }
@@ -394,11 +404,12 @@ const file_yadaat_v1_subject_proto_rawDesc = "" +
 	"\x12yadaat.com/Subject\x12\x12subjects/{subject}\"C\n" +
 	"\x11GetSubjectRequest\x12.\n" +
 	"\x04name\x18\x01 \x01(\tB\x1a\xe0A\x02\xfaA\x14\n" +
-	"\x12yadaat.com/SubjectR\x04name\"Q\n" +
+	"\x12yadaat.com/SubjectR\x04name\"i\n" +
 	"\x13ListSubjectsRequest\x12\x1b\n" +
 	"\tpage_size\x18\x01 \x01(\x05R\bpageSize\x12\x1d\n" +
 	"\n" +
-	"page_token\x18\x02 \x01(\tR\tpageToken\"n\n" +
+	"page_token\x18\x02 \x01(\tR\tpageToken\x12\x16\n" +
+	"\x06filter\x18\x03 \x01(\tR\x06filter\"n\n" +
 	"\x14ListSubjectsResponse\x12.\n" +
 	"\bsubjects\x18\x01 \x03(\v2\x12.yadaat.v1.SubjectR\bsubjects\x12&\n" +
 	"\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"I\n" +

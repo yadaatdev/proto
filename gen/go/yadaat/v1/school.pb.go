@@ -143,7 +143,11 @@ type ListSchoolsRequest struct {
 	//
 	// When paginating, all other parameters provided to `ListSchools` must match
 	// the call that provided the page token.
-	PageToken     string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
+	PageToken string `protobuf:"bytes,3,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
+	// An AIP-160 filter expression. Supported fields: `display_name`,
+	// `city_display_name`. Example:
+	// `display_name:"herzl" OR city_display_name:"tel"`.
+	Filter        string `protobuf:"bytes,4,opt,name=filter,proto3" json:"filter,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -195,6 +199,13 @@ func (x *ListSchoolsRequest) GetPageSize() int32 {
 func (x *ListSchoolsRequest) GetPageToken() string {
 	if x != nil {
 		return x.PageToken
+	}
+	return ""
+}
+
+func (x *ListSchoolsRequest) GetFilter() string {
+	if x != nil {
+		return x.Filter
 	}
 	return ""
 }
@@ -424,13 +435,14 @@ const file_yadaat_v1_school_proto_rawDesc = "" +
 	"\x11yadaat.com/School\x12\x1ecities/{city}/schools/{school}\"A\n" +
 	"\x10GetSchoolRequest\x12-\n" +
 	"\x04name\x18\x01 \x01(\tB\x19\xe0A\x02\xfaA\x13\n" +
-	"\x11yadaat.com/SchoolR\x04name\"\x81\x01\n" +
+	"\x11yadaat.com/SchoolR\x04name\"\x99\x01\n" +
 	"\x12ListSchoolsRequest\x12/\n" +
 	"\x06parent\x18\x01 \x01(\tB\x17\xe0A\x02\xfaA\x11\n" +
 	"\x0fyadaat.com/CityR\x06parent\x12\x1b\n" +
 	"\tpage_size\x18\x02 \x01(\x05R\bpageSize\x12\x1d\n" +
 	"\n" +
-	"page_token\x18\x03 \x01(\tR\tpageToken\"j\n" +
+	"page_token\x18\x03 \x01(\tR\tpageToken\x12\x16\n" +
+	"\x06filter\x18\x04 \x01(\tR\x06filter\"j\n" +
 	"\x13ListSchoolsResponse\x12+\n" +
 	"\aschools\x18\x01 \x03(\v2\x11.yadaat.v1.SchoolR\aschools\x12&\n" +
 	"\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"v\n" +

@@ -35,6 +35,10 @@ message ListCitiesRequest {
   // When paginating, all other parameters provided to `ListCities` must match
   // the call that provided the page token.
   string page_token = 2;
+
+  // An AIP-160 filter expression. Supported field: `display_name`.
+  // Example: `display_name:"tel"`.
+  string filter = 3;
 }
 
 message ListCitiesResponse {
