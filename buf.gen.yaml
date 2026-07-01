@@ -21,5 +21,9 @@ plugins:
   - remote: buf.build/bufbuild/es
     out: gen/ts
     opt: target=js+dts
+    # Also emit the imported googleapis descriptors (google/api/*) the generated
+    # TS imports; without this they're absent from the package and break resolution.
+    # include_wkt stays off — es maps google/protobuf/* to @bufbuild/protobuf/wkt.
+    include_imports: true
 inputs:
   - directory: schema
